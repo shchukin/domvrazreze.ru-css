@@ -7,7 +7,6 @@
         position: sticky;
         top: var(--header-height);
         height: calc(100vh - var(--header-height));
-        background-color: red;
     }
         .mobile-collage__scroll {
             height: 100%;
@@ -15,6 +14,7 @@
         }
             .mobile-collage__ribbon {
                 height: 100%;
+                background-color: #F7F8FA;
                 background-image: url("../images/collage-desktop@2x.jpg");
                 background-size: cover;
                 background-repeat: no-repeat;
