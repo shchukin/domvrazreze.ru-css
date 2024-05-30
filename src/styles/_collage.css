@@ -1,12 +1,17 @@
 .collage {
+    position: absolute;
+    left: 0;
+    top: 0;
     width: 1440px;
     height: 1092px;
-    margin-left: auto;
-    margin-right: auto;
+    /*margin-left: auto;*/
+    /*margin-right: auto;*/
     background-image: url("../images/collage-desktop@1x.jpg");
     background-size: 1440px 1092px;
     background-repeat: no-repeat;
     background-position: left top;
+    opacity: 50%;
+    pointer-events: none;
 }
 
 @media (min-resolution: 2dppx) {
@@ -14,8 +19,6 @@
         background-image: url("../images/collage-desktop@2x.jpg");
     }
 }
-
-
 
 .collage {
     background-image: image-set(
@@ -25,9 +28,16 @@
 }
 
     .collage__video {
-        opacity: 10%;
+        /*opacity: 10%;*/
     }
+        .collage__video--1 {
+            position: absolute;
+            left: 591px;
+            top: 341px;
+            width: 709px;
+            height: auto;
+        }
 
-    .collage__video--ready {
-        opacity: 100%;
-    }
+    /*.collage__video--ready {*/
+    /*    opacity: 100%;*/
+    /*}*/
