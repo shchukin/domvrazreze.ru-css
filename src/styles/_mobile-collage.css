@@ -2,6 +2,7 @@
     /*position: relative;*/
     /*overflow: hidden;*/
     height: 2000px;
+    pointer-events: none;
 }
     .mobile-collage__viewport {
         position: sticky;
