@@ -1,0 +1,29 @@
+.mobile-collage {
+    position: relative;
+    overflow: hidden;
+    height: 2000px;
+}
+    .mobile-collage__viewport {
+        position: fixed;
+        top: var(--header-height);
+        bottom: 0;
+        left: 0;
+        right: 0;
+        overflow-x: auto;
+    }
+        .mobile-collage__background {
+            height: 100%;
+            background-image: url("../images/collage-desktop@2x.jpg");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center center;
+            aspect-ratio: 576 / 436;
+        }
+
+
+@media (740px <= width) {
+
+    .mobile-collage {
+        display: none;
+    }
+}

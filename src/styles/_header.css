@@ -9,3 +9,26 @@
         background-color: #5E607E;
         color: #FFFFFF;
     }
+
+
+
+@media (width < 740px) {
+
+    .header {
+        height: var(--header-height);
+        padding: 0;
+    }
+        .header__inner {
+            position: fixed;
+            z-index: 100;
+            left: 0;
+            top: 0;
+            right: 0;
+            height: var(--header-height);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #5E607E;
+            color: #FFFFFF;
+        }
+}
