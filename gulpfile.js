@@ -175,6 +175,16 @@ gulp.task('images', function () {
 });
 
 
+// Videos: copy
+
+gulp.task('videos', function () {
+    return gulp.src('src/videos/**/*')
+        .pipe(plumber())
+        .pipe(gulp.dest('build/videos/'))
+        ;
+});
+
+
 // Markups: copy and change symbols <img> to sprite <svg>
 
 gulp.task('markups', function () {
@@ -281,7 +291,7 @@ gulp.task('lint', function () {
 
 
 gulp.task('default', function (fn) {
-    run('clean', 'manifest', 'favicon', 'temp', 'content', 'images', 'markups', 'layouts', 'vendors', 'scripts', 'symbols', 'styles', 'lint', fn);
+    run('clean', 'manifest', 'favicon', 'temp', 'content', 'images', 'videos', 'markups', 'layouts', 'vendors', 'scripts', 'symbols', 'styles', 'lint', fn);
 });
 
 
