@@ -34,7 +34,31 @@
             position: absolute;
             left: 591px;
             top: 341px;
-            width: 709px;
+            width: 708px;
+            height: auto;
+        }
+
+        .collage__video--2 {
+            position: absolute;
+            left: 228px;
+            top: 287px;
+            width: 1206px;
+            height: auto;
+        }
+
+        .collage__video--3 {
+            position: absolute;
+            left: 333px;
+            top: 476px;
+            width: 582px;
+            height: auto;
+        }
+
+        .collage__video--4 {
+            position: absolute;
+            left: 954px;
+            top: 0;
+            width: 480px;
             height: auto;
         }
 
