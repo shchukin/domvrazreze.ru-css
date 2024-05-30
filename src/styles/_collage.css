@@ -23,3 +23,11 @@
         url("../images/collage-desktop@1x.avif") type("image/avif") 1x
     );
 }
+
+    .collage__video {
+        opacity: 10%;
+    }
+
+    .collage__video--ready {
+        opacity: 100%;
+    }

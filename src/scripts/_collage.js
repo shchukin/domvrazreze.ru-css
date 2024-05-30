@@ -15,11 +15,11 @@
         function playNextVideo() {
             if (currentVideoIndex < videoCount) {
                 let $video = $(`#video-${currentVideoIndex + 1}`);
-                $video.show();
+                $video.addClass('collage__video--ready');
                 $video[0].play();
 
                 $video.on('ended', function() {
-                    $video.hide();
+                    $video.removeClass('collage__video--ready');
                     currentVideoIndex++;
                     setTimeout(playNextVideo, 1000); // Delay of 1 second
                 });
@@ -35,7 +35,7 @@
 
         // Add video elements to the page and set up preload handling
         for (let i = 1; i <= videoCount; i++) {
-            let videoElement = `<video id="video-${i}" src="../videos/collage-0${i}.mp4" preload="auto" muted></video>`;
+            let videoElement = `<video class="collage__video" id="video-${i}" src="../videos/collage-0${i}.mp4" preload="auto" muted></video>`;
             $('#video-container').append(videoElement);
 
             let video = document.getElementById(`video-${i}`);
@@ -45,5 +45,13 @@
                 checkVideosLoaded();
             });
         }
+
+
+
+
+    // Function to unmute all videos
+    $('.unmute').click(function() {
+        $('video').prop('muted', false);
+    });
 
 })(jQuery);
