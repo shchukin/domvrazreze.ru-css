@@ -2,17 +2,22 @@ document.addEventListener("DOMContentLoaded", function() {
 
     const collage = document.querySelector('.mobile-collage');
     const collageViewport = document.querySelector('.mobile-collage__viewport');
-    const collageBackground = document.querySelector('.mobile-collage__background');
+
+    const collageScroll = document.querySelector('.mobile-collage__scroll');
+    const collageRibbon = document.querySelector('.mobile-collage__ribbon');
+
+
 
 
     /* Init */
     const collageHeight = collage.clientHeight;
-    let collageViewportHeight = 0;
-    let endScroll = 0;
+    let verticalScrollCut = 0;
+    let horizontalScrollCut = 0;
+    let normalizedVerticalScroll = 0;
 
     function init() {
-        collageViewportHeight = collageViewport.offsetHeight;
-        endScroll = collageHeight - collageViewportHeight;
+        verticalScrollCut = collageHeight - collageViewport.offsetHeight; /* Нижняя точка по вертикали */
+        horizontalScrollCut = collageRibbon.clientWidth - collage.clientWidth; /* Правая точка по горизонтали */
     }
 
     init();
@@ -23,20 +28,25 @@ document.addEventListener("DOMContentLoaded", function() {
 
     window.addEventListener('scroll', function() {
         const scrolled = window.scrollY;
-        console.log(scrolled, endScroll)
-
-        /* 0 - начало 1080 -- конец */
-
-        if (scrolled > 2000 ) {
-
-        }
-
-
-        // const parallax = document.querySelector('.parallax');
-        // Adjust the background position based on scroll position
-        // parallax.style.backgroundPosition = `${100 - (scrolled * 0.1)}% 50%`;
+        normalizedVerticalScroll = Math.min(1, window.scrollY / verticalScrollCut); /* Значение от 0 до 1, насколько по вертикали прокрутили нужную область. 1 -- конец области */
+        collageScroll.scrollLeft = normalizedVerticalScroll * horizontalScrollCut
     });
 
+
+
+
+
+
+
+
+    collageScroll.addEventListener('scroll', function () {
+        console.log(this.scrollLeft)
+
+
+    });
+
+
+    /* Horizontal Init */
 
 });
 

@@ -6,7 +6,7 @@
     .mobile-collage__viewport {
         position: sticky;
         top: var(--header-height);
-        height: calc(100dvh - var(--header-height));
+        height: calc(100vh - var(--header-height));
         background-color: red;
     }
         .mobile-collage__scroll {
