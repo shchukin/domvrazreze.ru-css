@@ -1,57 +1,42 @@
-(function ($) {
+document.addEventListener("DOMContentLoaded", function() {
 
-    document.addEventListener("DOMContentLoaded", function() {
+    const collage = document.querySelector('.mobile-collage');
+    const collageViewport = document.querySelector('.mobile-collage__viewport');
+    const collageBackground = document.querySelector('.mobile-collage__background');
 
-        /* Playback */
 
-        const videos = document.querySelectorAll('.collage__video');
+    /* Init */
+    const collageHeight = collage.clientHeight;
+    let collageViewportHeight = 0;
+    let endScroll = 0;
 
-        function playVideosSequentially(index) {
-            if (index < videos.length) {
+    function init() {
+        collageViewportHeight = collageViewport.offsetHeight;
+        endScroll = collageHeight - collageViewportHeight;
+    }
 
-                /* Скрываем предыдущий */
-                if( videos[index - 1] ) {
-                    videos[index - 1].classList.remove('collage__video--currently-playing');
-                }
+    init();
+    window.addEventListener('resize', init);
 
-                /* Показываем текущий */
-                videos[index].classList.add('collage__video--currently-playing');
 
-                /* Стартуем текущий */
-                videos[index].play();
+    /* Run */
 
-                /* рекурсивно запускаем следующий с задержкой в 1000ms */
-                setTimeout(function() {
-                    playVideosSequentially(index + 1);
-                }, videos[index].duration * 1000 + 1000);
-            }
+    window.addEventListener('scroll', function() {
+        const scrolled = window.scrollY;
+        console.log(scrolled, endScroll)
+
+        /* 0 - начало 1080 -- конец */
+
+        if (scrolled > 2000 ) {
+
         }
 
-        videos[0].addEventListener('canplaythrough', function() {
-            playVideosSequentially(0);
-        });
 
-
-        /* Mute */
-
-        let isCollageMuted = true;
-        const unmute = document.querySelector('.collage__toggle-mute');
-        unmute.addEventListener('click', function() {
-            if (isCollageMuted) {
-                isCollageMuted = false;
-                this.classList.remove('collage__toggle-mute--muted');
-                videos.forEach(video => {
-                    video.muted = false;
-                })
-            } else  {
-                isCollageMuted = true;
-                this.classList.add('collage__toggle-mute--muted');
-                videos.forEach(video => {
-                    video.muted = true;
-                })
-            }
-        });
+        // const parallax = document.querySelector('.parallax');
+        // Adjust the background position based on scroll position
+        // parallax.style.backgroundPosition = `${100 - (scrolled * 0.1)}% 50%`;
     });
 
-//
-})(jQuery);
+
+});
+
