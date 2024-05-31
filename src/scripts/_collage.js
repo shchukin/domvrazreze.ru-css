@@ -18,10 +18,10 @@ document.addEventListener("DOMContentLoaded", function() {
             /* Стартуем текущий */
             videos[index].play();
 
-            /* рекурсивно запускаем следующий с задержкой в 1000ms */
+            /* рекурсивно запускаем следующий */
             setTimeout(function() {
                 playVideosSequentially(index + 1);
-            }, videos[index].duration * 1000 + 1000);
+            }, videos[index].duration * 1000); /* +1000 сюда, чтобы сделать секунду задержки между видео */
         }
     }
 
