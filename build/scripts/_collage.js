@@ -18,10 +18,10 @@ document.addEventListener("DOMContentLoaded", function() {
             /* Стартуем текущий */
             videos[index].play();
 
-            /* рекурсивно запускаем следующий с задержкой в 1000ms */
+            /* рекурсивно запускаем следующий */
             setTimeout(function() {
                 playVideosSequentially(index + 1);
-            }, videos[index].duration * 1000 + 1000);
+            }, videos[index].duration * 1000); /* +1000 сюда, чтобы сделать секунду задержки между видео */
         }
     }
 
@@ -29,25 +29,47 @@ document.addEventListener("DOMContentLoaded", function() {
         playVideosSequentially(0);
     });
 
-
-    /* Mute */
-
-    let isCollageMuted = true;
-    const unmute = document.querySelector('.collage__toggle-mute');
-    unmute.addEventListener('click', function() {
-        if (isCollageMuted) {
-            isCollageMuted = false;
-            this.classList.remove('collage__toggle-mute--muted');
-            videos.forEach(video => {
-                video.muted = false;
-            })
-        } else  {
-            isCollageMuted = true;
-            this.classList.add('collage__toggle-mute--muted');
-            videos.forEach(video => {
-                video.muted = true;
-            })
-        }
-    });
 });
+
+
+
+/* Вариант на jQuery -- пробуем fadeIn / fadeOut на видео -- не работает в случае с видео, ровно так же как и transition на opacity в варианте выше */
+
+// (function($) {
+//
+//
+//     /* Playback */
+//
+//     const videos = $('.collage__video');
+//
+//     function playVideosSequentially(index) {
+//         if (index < videos.length) {
+//
+//             /* Скрываем предыдущий */
+//             if( videos.eq([index - 1]).length ) {
+//                 videos.eq([index - 1]).removeClass('collage__video--currently-playing');
+//             }
+//
+//             /* Показываем текущий */
+//             videos.eq([index]).addClass('collage__video--currently-playing');
+//
+//             /* Стартуем текущий */
+//             videos.eq([index])[0].play();
+//
+//             /* рекурсивно запускаем следующий */
+//             setTimeout(function() {
+//                 playVideosSequentially(index + 1);
+//             }, videos.eq(index)[0].duration * 1000); /* +1000 сюда, чтобы сделать секунду задержки между видео */
+//         }
+//     }
+//
+//     videos.eq(0)[0].addEventListener('canplaythrough', function() {
+//         playVideosSequentially(0);
+//     });
+//
+//
+// })(jQuery);
+//
+//
+//
 
