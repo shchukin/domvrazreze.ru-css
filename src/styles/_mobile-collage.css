@@ -11,7 +11,7 @@
     }
         .mobile-collage__scroll {
             height: 100%;
-            overflow-x: auto;
+            overflow: hidden;
         }
             .mobile-collage__ribbon {
                 height: 100%;
@@ -21,6 +21,7 @@
                 background-repeat: no-repeat;
                 background-position: center center;
                 aspect-ratio: 576 / 436;
+                transition: transform 100ms ease;
             }
 
 

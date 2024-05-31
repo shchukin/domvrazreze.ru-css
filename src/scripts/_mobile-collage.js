@@ -7,8 +7,6 @@ document.addEventListener("DOMContentLoaded", function() {
     const collageRibbon = document.querySelector('.mobile-collage__ribbon');
 
 
-
-
     /* Init */
     const collageHeight = collage.clientHeight;
     let verticalScrollCut = 0;
@@ -29,24 +27,10 @@ document.addEventListener("DOMContentLoaded", function() {
     window.addEventListener('scroll', function() {
         const scrolled = window.scrollY;
         normalizedVerticalScroll = Math.min(1, window.scrollY / verticalScrollCut); /* Значение от 0 до 1, насколько по вертикали прокрутили нужную область. 1 -- конец области */
-        collageScroll.scrollLeft = normalizedVerticalScroll * horizontalScrollCut
+        // collageScroll.scrollLeft = normalizedVerticalScroll * horizontalScrollCut
+        collageRibbon.style.transform = `translate3d(${-1 * normalizedVerticalScroll * horizontalScrollCut}px, 0, 0)`;
     });
 
-
-
-
-
-
-
-
-    collageScroll.addEventListener('scroll', function () {
-        console.log(this.scrollLeft)
-
-
-    });
-
-
-    /* Horizontal Init */
 
 });
 
