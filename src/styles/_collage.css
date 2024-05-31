@@ -8,6 +8,7 @@
     background-size: 1440px 1092px;
     background-repeat: no-repeat;
     background-position: left top;
+    overflow: hidden;
 }
 
 @media (min-resolution: 2dppx) {
@@ -32,41 +33,41 @@
     }
         .collage__video--1 {
             position: absolute;
-            left: 0;
-            top: 665px;
-            width: 770px;
+            left: 1px;
+            top: 665.25px;
+            width: 767.25px;
             height: auto;
         }
 
         .collage__video--2 {
             position: absolute;
             left: 310px;
-            top: 753px;
-            width: 445px;
+            top: 753.5px;
+            width: 445.5px;
             height: auto;
         }
 
         .collage__video--3 {
             position: absolute;
-            left: 0;
+            left: 1px;
             top: 0;
-            width: 600px;
+            width: 599.5px;
             height: auto;
         }
 
         .collage__video--4 {
             position: absolute;
             left: 913px;
-            top: 78px;
+            top: 78.5px;
             width: 395px;
             height: auto;
         }
 
         .collage__video--5 {
             position: absolute;
-            left: 591px;
+            left: 591.5px;
             top: 341px;
-            width: 708px;
+            width: 707.75px;
             height: auto;
         }
 
@@ -80,25 +81,25 @@
 
         .collage__video--7 {
             position: absolute;
-            left: 333px;
-            top: 476px;
-            width: 582px;
+            left: 333.25px;
+            top: 476.25px;
+            width: 581.5px;
             height: auto;
         }
 
         .collage__video--8 {
             position: absolute;
-            left: 0;
-            top: -1px;
-            width: 1045px;
+            left: 1px;
+            top: -0.25px;
+            width: 1043.25px;
             height: auto;
         }
 
         .collage__video--9 {
             position: absolute;
-            left: 954px;
-            top: 0;
-            width: 480px;
+            left: 954.5px;
+            top: -0.25px;
+            width: 479.5px;
             height: auto;
         }
 
