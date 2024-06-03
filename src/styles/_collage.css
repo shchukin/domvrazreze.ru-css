@@ -11,7 +11,7 @@
     overflow: hidden;
 }
 
-@media (min-resolution: 2dppx) {
+@media (min-resolution: 1.5dppx) {
     .collage {
         background-image: url("../images/collage-desktop@2x.jpg");
     }

@@ -1,12 +1,13 @@
 :root {
-    /*--font: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", "Helvetica", "Arial", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";*/
+    --font: Helvetica Neue, Helvetica, Arial, sans-serif;
+    --font-heading: "Bebas Neue", sans-serif;
     /*--body-font-size: 16px;*/
     /*--body-line-height: 24px;*/
     /*--ease-out-quint: cubic-bezier(0.22, 1, 0.36, 1);*/
-    /*--transition-hover: 100ms ease;*/
+    --transition-hover: 100ms ease;
     /*--transition-show: 1200ms var(--ease-out-quint);*/
     /*--image-fallback: #F3F5F4;*/
-    --container-padding: 40px;
+    --container-padding: 54px; /* Равно срезам трапеции в подвале */
     /*--action-color: #0D7FC5;*/
     /*--action-color-hover: #2FA5ED;*/
     /*--input-border: #B3B3B3;*/
@@ -16,6 +17,7 @@
     /*--disabled-color: #999999;*/
     /*--error: #FF0033;*/
     --header-height: 71px;
+    --gray: #605E7D;
 }
 
 @media (350px <= width < 600px) {
@@ -28,4 +30,45 @@
     :root {
         --container-padding: 16px;
     }
+}
+
+
+
+:root {
+    --display-font: 56px;
+    --display-line: 1.4;
+    --heading-l-font: 48px;
+    --heading-l-line: 1.4;
+    --heading-m-font: 42px;
+    --heading-m-line: 1.4;
+    --subtitle-l-font: 40px;
+    --subtitle-l-line: 1.4;
+    --subtitle-m-font: 38px;
+    --subtitle-m-line: 1.4;
+    --body-s-font: 22px;
+    --body-s-line: 1.4;
+    --body-xs-font: 20px;
+    --body-xs-line: 1.4;
+}
+
+
+@media (width < 740px) {
+
+    :root {
+        --display-font: 32px;
+        --display-line: 1.4;
+        --heading-l-font: 36px;
+        --heading-l-line: 1.4;
+        --heading-m-font: 28px;
+        --heading-m-line: 1.4;
+        /*--subtitle-l-font: 40px; отстутствоует */
+        /*--subtitle-l-line: 1.4; отстутствоует */
+        --subtitle-m-font: 24px;
+        --subtitle-m-line: 1.4;
+        --body-s-font: 18px;
+        --body-s-line: 1.4;
+        --body-xs-font: 16px;
+        --body-xs-line: 1.4;
+    }
+
 }

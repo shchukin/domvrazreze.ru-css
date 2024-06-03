@@ -58,3 +58,13 @@
 
 
 
+.link--inverted,
+.wysiwyg .link--inverted {
+    color: inherit;
+    text-decoration-color: transparent;
+}
+
+.link--inverted:hover,
+.wysiwyg .link--inverted:hover {
+    text-decoration-color: currentColor;
+}

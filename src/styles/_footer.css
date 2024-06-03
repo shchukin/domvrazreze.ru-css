@@ -1,11 +1,87 @@
 .footer {
-    padding: 34px;
+
 }
-    .footer__inner {
-        height: 114px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background-color: #5E607E;
+    .footer__primary {
+        padding-top: 29px;
+        padding-bottom: 63px;
+        background-image: url("../vectors/footer.svg");
+        background-size: 1520px 100%;
+        background-repeat: no-repeat;
+        background-position: center center;
         color: #FFFFFF;
+    }
+        .footer__inner {
+            position: relative;
+            padding-left: 2.7778%;
+            padding-right: 2.7778%;
+            display: flex;
+            align-items: flex-start;
+        }
+            .footer__logo {
+                margin-top: 11px;
+                width: 146px;
+                height: 140px;
+                background-image: url("../images/footer-logo.png");
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-position: center center;
+                text-indent: 200%;
+                white-space: nowrap;
+                overflow: hidden;
+            }
+
+            @media (min-resolution: 1.5dppx) {
+                .footer__logo {
+                    background-image: url("../images/footer-logo@2x.png");
+                }
+            }
+
+            .footer__contains {
+                margin-left: 100px;
+                columns: 2;
+                gap: 40px;
+            }
+                .footer__link {
+                    display: block;
+                    padding-top: 11px;
+                    padding-bottom: 2px;
+                    width: fit-content;
+                    font-family: var(--font-heading);
+                    font-weight: bold;
+                    font-size: var(--subtitle-m-font);
+                    line-height: var(--subtitle-m-line);
+                    color: inherit;
+                    text-decoration: 2px underline transparent;
+                    text-underline-offset: 6px;
+                    transition: text-decoration-color var(--transition-hover);
+                }
+
+                .footer__link:hover {
+                    text-decoration-color: currentColor;
+                }
+
+            .footer__pages {
+                margin-top: 17px;
+                margin-left: 40px;
+            }
+                .footer__sub-heading {
+                    margin-top: 40px;
+                    display: block;
+                    font-weight: bold;
+                    font-size: 18px;
+                    line-height: 22px;
+                }
+
+                .footer__sub-heading:first-child {
+                    margin-top: 0;
+                }
+
+                .footer__text {
+                    margin-top: 16px;
+                    font-size: 18px;
+                    line-height: 22px;
+                }
+
+    .footer__secondary {
+
     }
