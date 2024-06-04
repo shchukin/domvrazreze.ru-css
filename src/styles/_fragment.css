@@ -28,7 +28,41 @@
                 margin-top: 20px;
                 margin-left: auto;
                 margin-right: 17px;
+                display: flex;
+                width: fit-content;
+                align-items: center;
+                gap: 8px;
+                border: none;
+                padding: 8px 2px 4px;
+                font-family: var(--font-heading);
+                font-weight: bold;
+                font-size: 20px;
+                line-height: 24px;
+                color: #605E7D;
+                text-align: center;
+                text-decoration: 1.75px underline transparent;
+                text-underline-offset: 4px;
+                white-space: nowrap;
+                cursor: pointer;
+                user-select: none;
+                transition: text-decoration-color var(--transition-hover);
             }
+
+            .fragment__more:hover {
+                text-decoration-color: currentColor;
+            }
+                .fragment__more::after {
+                    content: "";
+                    display: block;
+                    position: relative;
+                    top: -1px;
+                    width: 26px;
+                    height: 14px;
+                    background-image: url("../vectors/details.svg");
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                    background-position: center center;
+                }
 
         .fragment__preview {
             flex-grow: 586;
@@ -40,6 +74,7 @@
             }
 
             .fragment__player {
+                margin-top: 16px;
                 display: flex;
                 align-items: center;
                 justify-content: center;
@@ -327,3 +362,119 @@
     .fragment--posvjashhenija .fragment__wrap {
         flex-direction: row-reverse;
     }
+
+    .fragment--posvjashhenija .fragment__wrap::after {
+        content: "";
+        position: absolute;
+        left: 100%;
+        margin-left: 26px;
+        top: 291px;
+        display: block;
+        width: 129px;
+        height: 157px;
+        background-image: url("../images/fragment-posvjashhenija-right.svg");
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center center;
+    }
+
+
+
+@media (width < 740px) {
+
+    .fragment {
+        padding-bottom: 40px;
+    }
+
+    .fragment:first-child {
+        margin-top: 0;
+        border-top: none;
+        padding-top: 0;
+    }
+        .fragment__wrap {
+            /*position: relative; !* для позиционирования .fragment__wrap::after *!*/
+            display: block;
+            /*align-items: flex-start;*/
+            /*gap: 23px;*/
+        }
+            .fragment__content {
+                /*position: relative;  !* для позиционирования .fragment__content::after *!*/
+                /*flex-grow: 830;*/
+                /*flex-basis: 0;*/
+                border-top: 1px solid #8A8CA8;
+                padding-bottom: 0;
+            }
+
+            .fragment:first-child .fragment__content {
+                border-top: none;
+                padding-top: 0;
+            }
+                .fragment__heading {
+                    /*margin-top: 0;*/
+                    /*margin-bottom: 0;*/
+                    margin-right: 60px; /* Потому что стрелочка */
+                }
+
+                .fragment__description {
+                    /*margin-top: 10px;*/
+                }
+
+                .fragment__more {
+                    position: absolute; /* выше некоторых иллюстраций */
+                    right: calc(-1 * var(--container-padding) + 2px); /* 2px чтобы чуть-чуть отжать от края экрана, чтобы вдруг не появился горизонтальный скролл */
+                    top: -16px;
+                    margin: 0;
+                    box-sizing: content-box;
+                    width: 36px;
+                    border-left: var(--container-padding) solid transparent;
+                    border-right: var(--container-padding) solid transparent;
+                    height: 61px;
+                    text-indent: 200%;
+                    white-space: nowrap;
+                    overflow: hidden;
+                }
+                    .fragment__more::after {
+                        position: absolute;
+                        left: 0;
+                        top: 0;
+                        right: 0;
+                        bottom: 0;
+                        width: 36px;
+                        height: 21px;
+                        margin: auto;
+                    }
+
+
+            .fragment__preview {
+                margin-top: 40px;
+                /*flex-grow: 586;*/
+                /*flex-basis: 0;*/
+            }
+                .fragment__illustration {
+                    margin-top: 0 !important;
+                    /*width: 100%;*/
+                    /*height: auto;*/
+                }
+
+                .fragment__player {
+                    /*display: flex;*/
+                    /*align-items: center;*/
+                    /*justify-content: center;*/
+                    /*height: 85px;*/
+                    /*background: #BFBBAD;*/
+                }
+
+
+
+    /* Illustrations: */
+
+    .fragment__wrap::before,
+    .fragment__wrap::after {
+        display: none !important;
+    }
+
+    .fragment__content::after {
+        display: none !important;
+    }
+}
+
