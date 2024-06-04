@@ -104,6 +104,14 @@
         }
 
 
+@media (width < 1500px) {
+
+    .collage {
+        zoom: 0.8;
+    }
+}
+
+
 @media (width < 740px) {
 
     .collage {

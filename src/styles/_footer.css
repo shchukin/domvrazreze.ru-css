@@ -5,15 +5,15 @@
         padding-top: 29px;
         padding-bottom: 63px;
         background-image: url("../vectors/footer.svg");
-        background-size: 1520px 100%;
+        background-size: 1548px 100%;
         background-repeat: no-repeat;
         background-position: center center;
         color: #FFFFFF;
     }
         .footer__inner {
             position: relative;
-            padding-left: 2.7778%;
-            padding-right: 2.7778%;
+            padding-left: 41px;
+            padding-right: 41px;
             display: flex;
             align-items: flex-start;
         }
@@ -36,20 +36,23 @@
                 }
             }
 
-            .footer__contains {
+            .footer__contains-1 {
                 margin-left: 100px;
-                columns: 2;
-                gap: 40px;
             }
+
+            .footer__contains-2 {
+                margin-left: 40px;
+            }
+
                 .footer__link {
                     display: block;
-                    padding-top: 11px;
-                    padding-bottom: 2px;
+                    padding-top: 15px;
+                    padding-bottom: 6px;
                     width: fit-content;
                     font-family: var(--font-heading);
                     font-weight: bold;
                     font-size: var(--subtitle-m-font);
-                    line-height: var(--subtitle-m-line);
+                    line-height: calc(var(--subtitle-m-line) - 0.2);
                     color: inherit;
                     text-decoration: 2px underline transparent;
                     text-underline-offset: 6px;
@@ -59,10 +62,13 @@
                 .footer__link:hover {
                     text-decoration-color: currentColor;
                 }
+                    .footer__line-break {
+                        display: none;
+                    }
 
             .footer__pages {
                 margin-top: 17px;
-                margin-left: 40px;
+                margin-left: 180px;
             }
                 .footer__sub-heading {
                     margin-top: 40px;
@@ -85,3 +91,53 @@
     .footer__secondary {
 
     }
+
+
+
+@media (width < 1500px) {
+
+    .footer {
+
+    }
+        .footer__primary {
+            background-image: none;
+            background-color: #605E7D;
+        }
+
+        .footer__inner {
+            padding-left: 0;
+            padding-right: 154px;
+            justify-content: space-between;
+        }
+
+        .footer__contains-1 {
+            margin-left: 0;
+        }
+
+        .footer__contains-2 {
+            margin-left: -20px;
+        }
+
+        .footer__line-break {
+            display: inline;
+        }
+
+        .footer__pages {
+            margin-left: 0;
+        }
+
+        @media (width < 1440px) {
+
+            .footer__inner {
+                padding-right: 60px;
+            }
+
+            .footer__contains-2 {
+                margin-left: -20px;
+            }
+
+            .footer__pages {
+                margin-left: 0;
+            }
+        }
+}
