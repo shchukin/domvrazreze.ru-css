@@ -1,12 +1,15 @@
 .fragment {
+    position: relative; /* перерываем картинку из предыдущего пункта     */
     padding-bottom: 180px;
 }
     .fragment__wrap {
+        position: relative; /* для позиционирования .fragment__wrap::after */
         display: flex;
         align-items: flex-start;
         gap: 23px;
     }
         .fragment__content {
+            position: relative;  /* для позиционирования .fragment__content::after */
             flex-grow: 830;
             flex-basis: 0;
         }
@@ -20,6 +23,8 @@
             }
 
             .fragment__more {
+                position: relative; /* выше некоторых иллюстраций */
+                z-index: 10;
                 margin-top: 20px;
                 margin-left: auto;
                 margin-right: 17px;
@@ -44,6 +49,7 @@
 
 
 
+
 .fragment--tajny {
 
 }
@@ -55,12 +61,64 @@
         margin-top: -38px;
     }
 
+    .fragment--tajny .fragment__content::after {
+        content: "";
+        position: absolute;
+        left: 150px;
+        top: 100%;
+        margin-top: -33px;
+        display: block;
+        width: 302px;
+        height: 292px;
+        background-image: url("../images/fragments-tajny-bottom@1x.jpg");
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center center;
+    }
+
+    @media (min-resolution: 1.5dppx) {
+        .fragment--tajny .fragment__content::after {
+            background-image: url("../images/fragments-tajny-bottom@2x.jpg");
+        }
+    }
+
 
 .fragment--zhiteli {
 
 }
     .fragment--zhiteli .fragment__wrap {
 
+    }
+
+    .fragment--zhiteli .fragment__wrap::after {
+        content: "";
+        position: absolute;
+        left: 100%;
+        margin-left: 87px;
+        top: -118px;
+        margin-top: 0;
+        display: block;
+        width: 118px;
+        height: 147px;
+        background-image: url("../images/fragment-zhiteli-right.svg");
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center center;
+    }
+
+    .fragment--zhiteli .fragment__content::after {
+        content: "";
+        position: absolute;
+        right: 220px;
+        top: 100%;
+        margin-top: 109px;
+        display: block;
+        width: 86px;
+        height: 110px;
+        background-image: url("../images/fragment-zhiteli-bottom.svg");
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center center;
     }
 
 
@@ -71,6 +129,37 @@
         flex-direction: row-reverse;
     }
 
+    .fragment--progulki-po-leningradu .fragment__wrap::after {
+        content: "";
+        position: absolute;
+        right: 100%;
+        margin-right: 26px;
+        top: 0;
+        margin-top: -222px;
+        display: block;
+        width: 135px;
+        height: 243px;
+        background-image: url("../images/fragment-progulki-po-leningradu-left.svg");
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center center;
+    }
+
+    .fragment--progulki-po-leningradu .fragment__content::after {
+        content: "";
+        position: absolute;
+        left: 183px;
+        top: 100%;
+        margin-top: 60px;
+        display: block;
+        width: 220px;
+        height: 149px;
+        background-image: url("../images/fragment-progulki-po-leningradu-bottom.svg");
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center center;
+    }
+
 
 .fragment--hudozhniki {
 
@@ -79,7 +168,26 @@
 
     }
 
+    .fragment--hudozhniki .fragment__content::after {
+        content: "";
+        position: absolute;
+        right: 111px;
+        top: 100%;
+        margin-top: -32px;
+        display: block;
+        width: 248px;
+        height: 379px;
+        background-image: url("../images/fragment-hudozhniki-bottom@1x.jpg");
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center center;
+    }
 
+    @media (min-resolution: 1.5dppx) {
+        .fragment--hudozhniki .fragment__content::after {
+            background-image: url("../images/fragment-hudozhniki-bottom@2x.jpg");
+        }
+    }
 
 .fragment--pojety {
 
