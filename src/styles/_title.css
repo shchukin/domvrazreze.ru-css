@@ -1,0 +1,6 @@
+.title {
+    font-family: var(--font-heading);
+    font-size: var(--heading-l-font);
+    line-height: var(--heading-l-line);
+    color: #605E7D;
+}

@@ -1,3 +1,124 @@
 .fragment {
+    padding-bottom: 180px;
+}
+    .fragment__wrap {
+        display: flex;
+        align-items: flex-start;
+        gap: 23px;
+    }
+        .fragment__content {
+            flex-grow: 830;
+            flex-basis: 0;
+        }
+            .fragment__heading {
+                margin-top: 0;
+                margin-bottom: 0;
+            }
+
+            .fragment__description {
+                margin-top: 10px;
+            }
+
+            .fragment__more {
+                margin-top: 20px;
+                margin-left: auto;
+                margin-right: 17px;
+            }
+
+        .fragment__preview {
+            flex-grow: 586;
+            flex-basis: 0;
+        }
+            .fragment__illustration {
+                width: 100%;
+                height: auto;
+            }
+
+            .fragment__player {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 85px;
+                background: #BFBBAD;
+            }
+
+
+
+.fragment--tajny {
 
 }
+    .fragment--tajny .fragment__wrap {
+        flex-direction: row-reverse;
+    }
+
+    .fragment--tajny .fragment__illustration {
+        margin-top: -38px;
+    }
+
+
+.fragment--zhiteli {
+
+}
+    .fragment--zhiteli .fragment__wrap {
+
+    }
+
+
+.fragment--progulki-po-leningradu {
+
+}
+    .fragment--progulki-po-leningradu .fragment__wrap {
+        flex-direction: row-reverse;
+    }
+
+
+.fragment--hudozhniki {
+
+}
+    .fragment--hudozhniki .fragment__wrap {
+
+    }
+
+
+
+.fragment--pojety {
+
+}
+    .fragment--pojety .fragment__wrap {
+        flex-direction: row-reverse;
+    }
+
+
+.fragment--muzyka {
+
+}
+    .fragment--muzyka .fragment__wrap {
+
+    }
+
+.fragment--igry {
+
+}
+    .fragment--igry .fragment__wrap {
+        flex-direction: row-reverse;
+    }
+
+    .fragment--igry .fragment__illustration {
+        margin-top: -20px;
+    }
+
+
+.fragment--1931-god {
+
+}
+    .fragment--1931-god .fragment__wrap {
+
+    }
+
+
+.fragment--posvjashhenija {
+
+}
+    .fragment--posvjashhenija .fragment__wrap {
+        flex-direction: row-reverse;
+    }

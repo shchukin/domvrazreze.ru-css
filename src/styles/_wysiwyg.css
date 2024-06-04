@@ -1,7 +1,19 @@
 .wysiwyg {
+    --wysiwyg-font: var(--body-s-font);
+    --wysiwyg-line: var(--body-s-line);
+}
+
+.wysiwyg--smaller {
+    --wysiwyg-font: var(--body-xs-font);
+    --wysiwyg-line: var(--body-xs-line);
+}
+
+
+
+.wysiwyg {
     overflow-wrap: break-word;
-    font-size: var(--body-s-font);
-    line-height: var(--body-s-line);
+    font-size: var(--wysiwyg-font);
+    line-height: var(--wysiwyg-line);
 }
 
 .wysiwyg p,
@@ -10,8 +22,8 @@
 .wysiwyg hr,
 .wysiwyg figure,
 .wysiwyg blockquote {
-    margin-top: calc(var(--body-s-font) / 3 * 2);
-    margin-bottom: calc(var(--body-s-line) / 3 * 2);
+    margin-top: calc(var(--wysiwyg-font) / 3 * 2);
+    margin-bottom: calc(var(--wysiwyg-line) / 3 * 2);
 }
 
 .wysiwyg p:first-child,
