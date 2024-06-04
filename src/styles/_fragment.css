@@ -16,6 +16,8 @@
             .fragment__heading {
                 margin-top: 0;
                 margin-bottom: 0;
+                padding-top: 10px;
+                padding-bottom: 10px;
             }
 
             .fragment__description {
@@ -383,14 +385,25 @@
 @media (width < 740px) {
 
     .fragment {
-        padding-bottom: 40px;
+        position: relative;
+        padding-bottom: 0;
     }
+        /* разделитель: */
+        .fragment::after {
+            content: "";
+            display: block;
+            margin: 40px var(--container-padding) 72px;
+            height: 1px;
+            background-color: #8A8CA8;
+        }
 
-    .fragment:first-child {
-        margin-top: 0;
-        border-top: none;
-        padding-top: 0;
+    .fragment:last-child {
+        margin-bottom: 120px;
     }
+        .fragment:last-child::after {
+            display: none;
+        }
+
         .fragment__wrap {
             /*position: relative; !* для позиционирования .fragment__wrap::after *!*/
             display: block;
@@ -401,8 +414,11 @@
                 /*position: relative;  !* для позиционирования .fragment__content::after *!*/
                 /*flex-grow: 830;*/
                 /*flex-basis: 0;*/
-                border-top: 1px solid #8A8CA8;
                 padding-bottom: 0;
+                display: grid;
+                grid-template-columns: 1fr auto;
+                grid-template-areas: "left right" "bottom bottom";
+                align-items: center;
             }
 
             .fragment:first-child .fragment__content {
@@ -410,20 +426,20 @@
                 padding-top: 0;
             }
                 .fragment__heading {
-                    /*margin-top: 0;*/
-                    /*margin-bottom: 0;*/
+                    grid-area: left;
                     margin-right: 60px; /* Потому что стрелочка */
                 }
 
                 .fragment__description {
                     /*margin-top: 10px;*/
+                    grid-area: bottom;
                 }
 
                 .fragment__more {
-                    position: absolute; /* выше некоторых иллюстраций */
-                    right: calc(-1 * var(--container-padding) + 2px); /* 2px чтобы чуть-чуть отжать от края экрана, чтобы вдруг не появился горизонтальный скролл */
-                    top: -16px;
-                    margin: 0;
+                    margin-top: -16px;
+                    margin-bottom: -16px;
+                    margin-right: calc(-1 * var(--container-padding) + 2px); /* 2px чтобы чуть-чуть отжать от края экрана, чтобы вдруг не появился горизонтальный скролл */
+                    grid-area: right;
                     box-sizing: content-box;
                     width: 36px;
                     border-left: var(--container-padding) solid transparent;
@@ -443,7 +459,6 @@
                         height: 21px;
                         margin: auto;
                     }
-
 
             .fragment__preview {
                 margin-top: 40px;

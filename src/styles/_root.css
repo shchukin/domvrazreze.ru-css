@@ -38,7 +38,7 @@
     --display-font: 56px;
     --display-line: 1.4;
     --heading-l-font: 48px;
-    --heading-l-line: 1.4;
+    --heading-l-line: 48px;
     --heading-m-font: 42px;
     --heading-m-line: 1.4;
     --subtitle-l-font: 40px;
@@ -58,7 +58,7 @@
         --display-font: 32px;
         --display-line: 1.4;
         --heading-l-font: 36px;
-        --heading-l-line: 1.4;
+        --heading-l-line: 36px;
         --heading-m-font: 28px;
         --heading-m-line: 1.4;
         /*--subtitle-l-font: 40px; отстутствоует */
