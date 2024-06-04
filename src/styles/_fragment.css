@@ -234,11 +234,34 @@
 
 
 .fragment--muzyka {
-
+    margin-bottom: 20px;
 }
     .fragment--muzyka .fragment__wrap {
 
     }
+
+    .fragment--muzyka .fragment__content::after {
+        content: "";
+        position: absolute;
+        right: 44px;
+        margin-right: 200px;
+        top: 100%;
+        margin-top: -43px;
+        display: block;
+        width: 296px;
+        height: 302px;
+        background-image: url("../images/fragment-muzyka-bottom@1x.jpg");
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center center;
+    }
+
+    @media (min-resolution: 1.5dppx) {
+        .fragment--muzyka .fragment__content::after {
+            background-image: url("../images/fragment-muzyka-bottom@2x.jpg");
+        }
+    }
+
 
 .fragment--igry {
 
