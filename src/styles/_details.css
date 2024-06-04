@@ -1,0 +1,37 @@
+.details {
+    display: inline-flex;
+    vertical-align: top;
+    align-items: center;
+    gap: 8px;
+    border: none;
+    padding: 8px 2px 4px;
+    font-family: var(--font-heading);
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 24px;
+    color: #605E7D;
+    text-align: center;
+    text-decoration: 1.75px underline transparent;
+    text-underline-offset: 4px;
+    white-space: nowrap;
+    cursor: pointer;
+    user-select: none;
+    transition: text-decoration-color var(--transition-hover);
+}
+
+.details:hover {
+    text-decoration-color: currentColor;
+}
+
+    .details::after {
+        content: "";
+        display: block;
+        position: relative;
+        top: -1px;
+        width: 26px;
+        height: 14px;
+        background-image: url("../vectors/details.svg");
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center center;
+    }
