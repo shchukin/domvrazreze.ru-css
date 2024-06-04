@@ -282,6 +282,44 @@
 
     }
 
+    .fragment--1931-god .fragment__wrap::before {
+        content: "";
+        position: absolute;
+        right: 100%;
+        margin-right: -8px;
+        top: 403px;
+        display: block;
+        width: 209px;
+        height: 172px;
+        background-image: url("../images/1931-god-left.svg");
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center center;
+    }
+
+    .fragment--1931-god .fragment__wrap::after {
+        content: "";
+        position: absolute;
+        left: 100%;
+        margin-left: -16px;
+        top: 158px;
+        display: block;
+        width: 193px;
+        height: 186px;
+        background-image: url("../images/1931-god-right@1x.jpg");
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center center;
+    }
+
+    @media (min-resolution: 1.5dppx) {
+
+        .fragment--1931-god .fragment__wrap::after {
+            background-image: url("../images/1931-god-right@2x.jpg");
+        }
+    }
+
+
 
 .fragment--posvjashhenija {
 
