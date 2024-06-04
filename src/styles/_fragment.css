@@ -196,6 +196,42 @@
         flex-direction: row-reverse;
     }
 
+    .fragment--pojety .fragment__wrap::after {
+        content: "";
+        position: absolute;
+        right: 100%;
+        margin-right: 50px;
+        top: 147px;
+        display: block;
+        width: 107px;
+        height: 110px;
+        background-image: url("../images/fragment-pojety-left.svg");
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center center;
+    }
+
+    .fragment--pojety .fragment__content::after {
+        content: "";
+        position: absolute;
+        left: 157px;
+        top: 100%;
+        margin-top: 64px;
+        display: block;
+        width: 146px;
+        height: 129px;
+        background-image: url("../images/fragment-pojety-bottom@1x.jpg");
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center center;
+    }
+
+    @media (min-resolution: 1.5dppx) {
+        .fragment--pojety .fragment__content::after {
+            background-image: url("../images/fragment-pojety-bottom@2x.jpg");
+        }
+    }
+
 
 .fragment--muzyka {
 
