@@ -1,0 +1,90 @@
+.http-error {
+    padding-top: 65px;
+    padding-bottom: 140px;
+}
+    .http-error::before {
+        content: "";
+        display: block;
+        width: 251px;
+        height: 207px;
+        margin-left: auto;
+        margin-right: auto;
+        background-image: url("../vectors/http-error.svg");
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center center;
+    }
+
+    .http-error__heading {
+        margin-top: 54px;
+        font-family: var(--font-heading);
+        font-weight: bold;
+        font-size: 88px;
+        line-height: 88px;
+        color: #605E7D;
+        text-transform: uppercase;
+        text-align: center;
+    }
+
+    .http-error__description {
+        max-width: 580px;
+        margin-top: 12px;
+        margin-left: auto;
+        margin-right: auto;
+        font-size: var(--body-xs-font);
+        line-height: var(--body-xs-line);
+        text-align: center;
+    }
+
+    .http-error__action {
+        margin-top: 50px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+
+
+@media (width < 640px) {
+
+    .http-error {
+        /*padding-top: 65px;*/
+        /*padding-bottom: 140px;*/
+    }
+        .http-error::before {
+            /*content: "";*/
+            /*display: block;*/
+            width: 204px;
+            height: 176px;
+            /*margin-left: auto;*/
+            /*margin-right: auto;*/
+            /*background-image: url("../vectors/http-error.svg");*/
+            /*background-size: contain;*/
+            /*background-repeat: no-repeat;*/
+            /*background-position: center center;*/
+        }
+
+        .http-error__heading {
+            margin-top: 24px;
+            /*font-family: var(--font-heading);*/
+            /*font-weight: bold;*/
+            font-size: 56px;
+            line-height: 56px;
+            /*color: #605E7D;*/
+            /*text-transform: uppercase;*/
+            /*text-align: center;*/
+        }
+
+        .http-error__description {
+            /*max-width: 580px;*/
+            margin-top: 20px;
+            /*margin-left: auto;*/
+            /*margin-right: auto;*/
+            /*font-size: var(--body-xs-font);*/
+            /*line-height: var(--body-xs-line);*/
+            /*text-align: center;*/
+        }
+
+        .http-error__action {
+            margin-top: 28px;
+        }
+}
