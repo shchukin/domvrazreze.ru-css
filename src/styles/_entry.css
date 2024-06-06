@@ -18,10 +18,6 @@
         gap: 24px;
     }
 
-    .entry__gallery {
-        /*scrollbar-color: red blue; !* thumb color and track color *!*/
-    }
-
     .entry__gallery::-webkit-scrollbar {
         height: 7px;
     }
