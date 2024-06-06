@@ -1,3 +1,4 @@
 .cut-fragments-illustrations {
+    padding-top: 38px; /* столько пикселей обрезается отрицательным маргином в .fragment--tajny .fragment__illustration */
     overflow: hidden;
 }

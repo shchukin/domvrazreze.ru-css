@@ -1,0 +1,37 @@
+.listing {
+
+}
+    .listing__heading {
+
+    }
+
+    .listing__body {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+    }
+        .listing__preview {
+
+        }
+
+        .listing__content {
+
+        }
+            .listing__player {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 85px;
+                background-color: #BFBBAD;
+            }
+
+            .listing__description {
+                margin-top: 40px;
+            }
+
+    .listing__list {
+
+    }
+        .listing__item {
+
+        }
