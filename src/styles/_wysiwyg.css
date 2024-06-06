@@ -46,7 +46,21 @@
 
 
 .wysiwyg h2 {
+    margin-top: 32px;
+    margin-bottom: 24px;
+    font-family: var(--font-heading);
+    font-weight: bold;
+    font-size: 32px;
+    line-height: 32px;
+    color: #605E7D;
+    text-transform: uppercase;
+}
 
+@media (width < 740px) {
+    .wysiwyg h2 {
+        margin-top: 28px;
+        margin-bottom: 20px;
+    }
 }
 
 .wysiwyg h3 {
@@ -71,7 +85,7 @@
 
 
 .wysiwyg img {
-    width: 100%;
+    max-width: 100%;
     height: auto;
     vertical-align: top;
 }

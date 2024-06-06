@@ -1,4 +1,5 @@
 .footer {
+    margin-top: 160px;
     padding-bottom: 65px;
 }
     .footer__primary {
@@ -137,7 +138,7 @@
 @media (width < 1500px) {
 
     .footer {
-
+        margin-top: 40px;
     }
         .footer__primary {
             background-image: none;

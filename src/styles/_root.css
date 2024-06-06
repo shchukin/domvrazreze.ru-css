@@ -8,8 +8,8 @@
     /*--transition-show: 1200ms var(--ease-out-quint);*/
     /*--image-fallback: #F3F5F4;*/
     --container-padding: 54px; /* Равно срезам трапеции в подвале */
-    /*--action-color: #0D7FC5;*/
-    /*--action-color-hover: #2FA5ED;*/
+    --action-color: #605E7D;
+    --action-color-hover: #605E7D;
     /*--input-border: #B3B3B3;*/
     /*--input-border-hover-and-focus: #7E7E7E;*/
     /*--placeholder-color: #999999;*/
@@ -36,7 +36,7 @@
 
 :root {
     --display-font: 56px;
-    --display-line: 1.4;
+    --display-line: 56px;
     --heading-l-font: 48px;
     --heading-l-line: 48px;
     --heading-m-font: 42px;
@@ -56,7 +56,7 @@
 
     :root {
         --display-font: 32px;
-        --display-line: 1.4;
+        --display-line: 43px;
         --heading-l-font: 36px;
         --heading-l-line: 36px;
         --heading-m-font: 28px;

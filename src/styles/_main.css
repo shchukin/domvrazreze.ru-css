@@ -1,0 +1,11 @@
+.main {
+    margin-top: 60px;
+}
+
+
+@media (width < 740px) {
+
+    .main {
+        margin-top: 40px;
+    }
+}

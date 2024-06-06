@@ -12,7 +12,7 @@
 /*@import url("_hide-scrollbar.css");*/
 
 @import url("_link.css");
-/*@import url("_button.css");*/
+@import url("_button.css");
 /*@import url("_input.css");*/
 /*@import url("_choice.css");*/
 @import url("_wysiwyg.css");
@@ -33,5 +33,8 @@
 @import url("_cut-fragments-illustrations.css");
 @import url("_http-error.css");
 @import url("_arrow-button.css");
+@import url("_breadcrumbs.css");
+@import url("_main.css");
+@import url("_article.css");
 
 

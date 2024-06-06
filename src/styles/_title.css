@@ -1,6 +1,30 @@
 .title {
     font-family: var(--font-heading);
-    font-size: var(--heading-l-font);
-    line-height: var(--heading-l-line);
+    font-size: 38px;
+    line-height: 38px;
     color: #605E7D;
+}
+
+@media (width < 740px) {
+
+    .title {
+        font-size: 24px;
+        line-height: 29px;
+    }
+}
+
+
+
+
+.title--page-level {
+    font-size: 56px;
+    line-height: 56px;
+}
+
+@media (width < 740px) {
+
+    .title--page-level {
+        font-size: 36px;
+        line-height: 42px;
+    }
 }
