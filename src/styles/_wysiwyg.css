@@ -44,6 +44,15 @@
     margin-bottom: 0;
 }
 
+/* Исключая figure: */
+.wysiwyg p,
+.wysiwyg ul,
+.wysiwyg ol,
+.wysiwyg hr,
+.wysiwyg blockquote {
+    max-width: 1072px;
+}
+
 
 .wysiwyg h2 {
     margin-top: 32px;
@@ -83,6 +92,11 @@
     margin-bottom: 0;
 }
 
+.wysiwyg figure {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
 
 .wysiwyg img {
     max-width: 100%;
