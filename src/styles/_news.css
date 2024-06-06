@@ -1,0 +1,38 @@
+.news {
+
+}
+    .news__heading {
+
+    }
+
+    .news__list {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 40px 24px;
+    }
+
+    .news__pagination {
+        margin-top: 40px;
+    }
+
+
+
+@media (width < 740px) {
+
+    .news {
+
+    }
+        .news__heading {
+
+        }
+
+        .news__list {
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            gap: 24px;
+        }
+
+        .news__pagination {
+            margin-top: 40px;
+        }
+}

@@ -1,0 +1,44 @@
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 9px;
+}
+    .pagination__link {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 50px;
+        height: 50px;
+        padding-top: 4px;
+        font-family: var(--font-heading);
+        font-weight: bold;
+        font-size: 20px;
+        line-height: 20px;
+        color: #605E7D;
+        text-decoration: none;
+    }
+        .pagination__link::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto;
+            display: block;
+            width: 43px;
+            height: 43px;
+            border: 1px solid currentColor;
+        }
+
+    .pagination__link--current {
+        background-image: url("../vectors/pagination-current.svg");
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center center;
+        color: #FFFFFF;
+    }
+        .pagination__link--current::after {
+            display: none;
+        }

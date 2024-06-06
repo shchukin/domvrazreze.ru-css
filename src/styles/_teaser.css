@@ -1,0 +1,53 @@
+.teaser {
+
+}
+    .teaser__preview {
+        display: block;
+        border: 1px solid #605E7D;
+        border-radius: 3px;
+        overflow: hidden;
+        text-decoration: none;
+        color: inherit;
+    }
+        .teaser__image {
+            vertical-align: top;
+            width: 100%;
+            height: auto;
+        }
+
+    .teaser__body {
+        margin-top: 16px;
+        display: block;
+        padding: 18px 16px 16px;
+        background-color: #9DB9D6;
+        text-decoration: none;
+        color: inherit;
+    }
+        .teaser__heading {
+            margin-top: 0;
+            margin-bottom: 0;
+            font-weight: bold;
+            font-size: 18px;
+            line-height: 21px;
+            text-transform: uppercase;
+        }
+
+        .teaser__description {
+            margin-top: 12px;
+            font-size: 16px;
+            line-height: 22px;
+            white-space: normal;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+        }
+
+        .teaser__time {
+            margin-top: 10px;
+            display: block;
+            font-size: 16px;
+            line-height: 22px;
+            color: #3D3D3D;
+        }
