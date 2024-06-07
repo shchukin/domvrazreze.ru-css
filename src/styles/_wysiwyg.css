@@ -22,8 +22,8 @@
 .wysiwyg hr,
 .wysiwyg figure,
 .wysiwyg blockquote {
-    margin-top: calc(var(--wysiwyg-font) / 3 * 2);
-    margin-bottom: calc(var(--wysiwyg-line) / 3 * 2);
+    margin-top: calc(var(--wysiwyg-font) / 3 * 2); /* Если меняем это значение, то поменять и отступ в .intro__bottom */
+    margin-bottom: calc(var(--wysiwyg-line) / 3 * 2); /* Если меняем это значение, то поменять и отступ в .intro__bottom */
 }
 
 .wysiwyg p:first-child,

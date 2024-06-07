@@ -6,19 +6,14 @@
         margin-bottom: 0;
     }
 
-    .intro__primary {
-        display: flex;
-        align-items: flex-start;
-        justify-content: space-between;
+    .intro__body {
+        margin-top: 40px;
     }
-        .intro__top {
-            width: 56.6667%;
-        }
-
         .intro__quote {
+            float: right;
             position: relative;
-            margin: 0;
             width: 40.69444%;
+            margin: 0 0 10px 2.6433%;
             padding: 53px 43px 61px 50px;
             background-image: url("../vectors/intro-quote-background.svg");
             background-size: 100% 100%;
@@ -40,6 +35,13 @@
                 background-position: center center;
             }
 
-    .intro__bottom {
 
+
+    .intro__top {
+
+    }
+
+
+    .intro__bottom {
+        margin-top: calc(var(--wysiwyg-font) / 3 * 2); /* Как в .wysiwyg */
     }
