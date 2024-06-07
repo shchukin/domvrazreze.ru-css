@@ -69,12 +69,18 @@
             /*margin-top: 40px;*/
             display: flex;
             overflow-x: auto;
+            scroll-snap-type: x mandatory;
             /*grid-template-columns: repeat(6, 1fr);*/
             gap: 20px;
         }
             .partners__item {
                 width: calc((100% - 20px) / 2);
                 flex-shrink: 0;
+                padding-bottom: 20px;
+            }
+
+            .partners__item:nth-child(odd) {
+                scroll-snap-align: start;
             }
                 .partners__preview {
                     /*display: block;*/
