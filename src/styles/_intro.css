@@ -1,0 +1,45 @@
+.intro {
+
+}
+    .intro__heading {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    .intro__primary {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+    }
+        .intro__top {
+            width: 56.6667%;
+        }
+
+        .intro__quote {
+            position: relative;
+            margin: 0;
+            width: 40.69444%;
+            padding: 53px 43px 61px 50px;
+            background-image: url("../vectors/intro-quote-background.svg");
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            background-position: center center;
+            font-style: italic;
+        }
+            .intro__quote::before {
+                content: "";
+                position: absolute;
+                left: 50px;
+                top: -24px;
+                display: block;
+                width: 55px;
+                height: 52px;
+                background-image: url("../vectors/intro-quote-marks.svg");
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-position: center center;
+            }
+
+    .intro__bottom {
+
+    }
