@@ -35,46 +35,9 @@
 
     .listing__list {
         margin-top: 96px;
+        display: grid;
+        gap: 40px;
     }
-        .listing__item {
-            margin-top: 40px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 17px 24px;
-            background-color: #9DB9D6;
-            text-decoration: none;
-            color: currentColor;
-        }
-
-        .listing__item:first-child {
-            margin-top: 0;
-        }
-            .listing__sub-heading {
-                font-weight: bold;
-                font-size: 22px;
-                line-height: 25px;
-            }
-
-            .listing__details {
-                display: flex;
-                align-items: flex-start;
-                gap: 12px;
-                padding-top: 4px;
-                font-family: var(--font-heading);
-                font-weight: bold;
-                font-size: 20px;
-                line-height: 20px;
-            }
-                .listing__details::after {
-                    content: "";
-                    display: block;
-                    margin-top: 3px;
-                    width: 10px;
-                    height: 10px;
-                    background-color: currentColor;
-                    border-radius: 50%;
-                }
 
 
 
@@ -117,44 +80,6 @@
 
         .listing__list {
             margin-top: 80px;
+            gap: 24px;
         }
-            .listing__item {
-                margin-top: 24px;
-                /*display: flex;*/
-                /*align-items: center;*/
-                /*justify-content: space-between;*/
-                /*padding: 17px 24px;*/
-                /*background-color: #9DB9D6;*/
-                /*text-decoration: none;*/
-                /*color: currentColor;*/
-            }
-
-            .listing__item:first-child {
-                /*margin-top: 0;*/
-            }
-                .listing__sub-heading {
-                    /*font-weight: bold;*/
-                    font-size: 16px;
-                    line-height: 18px;
-                }
-
-                .listing__details {
-                    display: none;
-                    /*align-items: flex-start;*/
-                    /*gap: 12px;*/
-                    /*padding-top: 4px;*/
-                    /*font-family: var(--font-heading);*/
-                    /*font-weight: bold;*/
-                    /*font-size: 20px;*/
-                    /*line-height: 20px;*/
-                }
-                    .listing__details::after {
-                        /*content: "";*/
-                        /*display: block;*/
-                        /*margin-top: 3px;*/
-                        /*width: 10px;*/
-                        /*height: 10px;*/
-                        /*background-color: currentColor;*/
-                        /*border-radius: 50%;*/
-                    }
 }
