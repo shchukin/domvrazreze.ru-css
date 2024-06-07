@@ -42,8 +42,8 @@
 @media (width < 740px) {
 
     .artists {
-        /*margin-top: 98px;*/
-        /*padding-bottom: 32px;*/
+        margin-top: 60px;
+        padding-bottom: 0;
     }
         .artists__heading {
             /*margin-top: 0;*/
