@@ -1,14 +1,14 @@
 .title {
     font-family: var(--font-heading);
-    font-size: 38px;
-    line-height: 38px;
+    font-size: 42px;
+    line-height: 59px;
     color: #605E7D;
 }
 
 @media (width < 740px) {
 
     .title {
-        font-size: 24px;
+        font-size: 28px;
         line-height: 29px;
     }
 }

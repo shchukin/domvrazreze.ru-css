@@ -12,6 +12,7 @@
     margin-top: 0;
 }
     .bar__heading {
+        max-width: 944px;
         font-weight: bold;
         font-size: 22px;
         line-height: 25px;
@@ -48,7 +49,8 @@
 @media (width < 740px) {
 
     .bar {
-
+        padding-left: 16px;
+        padding-right: 16px;
     }
         .bar__heading {
             /*font-weight: bold;*/
