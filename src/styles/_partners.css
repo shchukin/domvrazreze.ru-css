@@ -53,20 +53,20 @@
 @media (width < 740px) {
 
     .partners {
-        /*margin-top: 112px;*/
+        margin-top: 98px;
     }
         .partners__heading {
             /*margin-top: 0;*/
             /*margin-bottom: 0;*/
             /*font-family: var(--font-heading);*/
             /*font-weight: bold;*/
-            /*font-size: 48px;*/
-            /*line-height: 48px;*/
+            font-size: 38px;
+            line-height: 38px;
             /*color: #605E7D;*/
         }
 
         .partners__list {
-            /*margin-top: 40px;*/
+            margin-top: 24px;
             display: flex;
             overflow-x: auto;
             scroll-snap-type: x mandatory;
@@ -97,8 +97,8 @@
 
                 .partners__name {
                     /*margin-top: 15px;*/
-                    /*font-size: 18px;*/
-                    /*line-height: 21px;*/
+                    font-size: 16px;
+                    line-height: 18px;
                     /*text-align: center;*/
                 }
                     .partners__link {
