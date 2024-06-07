@@ -16,6 +16,12 @@
         font-size: 22px;
         line-height: 25px;
     }
+        .bar__addition {
+            margin-top: 9px;
+            font-weight: normal;
+            font-size: 18px;
+            line-height: 21px;
+        }
 
     .bar__details {
         display: flex;
@@ -49,6 +55,10 @@
             font-size: 16px;
             line-height: 18px;
         }
+            .bar__addition {
+                font-size: 16px;
+                line-height: 18px;
+            }
 
         .bar__details {
             display: none;

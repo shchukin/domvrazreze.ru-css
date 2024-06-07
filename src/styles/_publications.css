@@ -1,0 +1,37 @@
+.publications {
+
+}
+    .publications__heading {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    .publications__list {
+        margin-top: 50px;
+        display: grid;
+        gap: 24px;
+    }
+
+    .publications__pagination {
+        margin-top: 40px;
+    }
+
+
+@media (width < 740px) {
+
+    .publications {
+
+    }
+        .publications__heading {
+
+        }
+
+        .publications__list {
+            margin-top: 36px;
+            gap: 24px;
+        }
+
+        .publications__pagination {
+            margin-top: 24px;
+        }
+}
