@@ -120,7 +120,8 @@ function resetToPristineState() {
     isPlaying = false;
     updateMarquee();
     clearCurrentTrackHighlight();
-    toggleMarquee();
+    const marquee = document.getElementById('marquee');
+    marquee.style.display = 'none';
 }
 
 // Function to clear current track highlight
@@ -169,7 +170,7 @@ tracks.forEach((track, index) => {
     audioInstancesDiv.appendChild(instanceDiv);
 });
 
-// Initial marquee update
-updateMarquee();
+// Initial setup
+resetToPristineState();
 // Start updating progress bars
 updateAllProgressBars();
