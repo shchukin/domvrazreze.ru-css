@@ -13,7 +13,8 @@
             pointer-events: auto;
             position: relative;
             width: 456px;
-            padding: 73px 24px 24px;
+            padding-top: 53px;
+            padding-bottom: 4px;
             background-color: #FFFFFF;
             background-image: url("../vectors/playlist-center.svg");
             background-size: 100% auto;
@@ -37,6 +38,7 @@
             .playlist__heading {
                 margin-top: 0;
                 margin-bottom: 0;
+                padding-left: 24px;
                 font-family: var(--font-heading);
                 font-weight: bold;
                 font-size: 38px;
