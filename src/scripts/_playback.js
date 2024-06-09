@@ -96,22 +96,16 @@ function showMarqueeIfHidden() {
 // Function to update the progress bar of a specific track
 function updateProgressBar(index) {
     const progressBars = document.querySelectorAll(`#play-progress-${index} .play-progress__value`);
+    const globalProgressBar = document.getElementById('global-progress-bar-inner');
     if (sounds[index].playing() || sounds[index].state() === 'loaded') {
         const seek = sounds[index].seek() || 0;
         const progress = (seek / sounds[index].duration()) * 100;
         progressBars.forEach(progressBar => {
             progressBar.style.width = `${progress}%`;
         });
-    }
-}
-
-// Function to update the global progress bar
-function updateGlobalProgressBar() {
-    const progressBar = document.getElementById('global-progress-bar-inner');
-    if (sounds[currentTrackIndex].playing() || sounds[currentTrackIndex].state() === 'loaded') {
-        const seek = sounds[currentTrackIndex].seek() || 0;
-        const progress = (seek / sounds[currentTrackIndex].duration()) * 100;
-        progressBar.style.width = `${progress}%`;
+        if (index === currentTrackIndex) {
+            globalProgressBar.style.width = `${progress}%`;
+        }
     }
 }
 
@@ -137,6 +131,7 @@ function resetToPristineState() {
     const marquee = document.getElementById('marquee');
     marquee.style.display = 'none';
     updatePlayPauseButtons();
+    document.getElementById('global-progress-bar-inner').style.width = '0%';
 }
 
 // Function to clear current track highlight
@@ -171,7 +166,24 @@ function seekTrack(event, index) {
     const width = rect.width;
     const percentage = offsetX / width;
     const seekTime = sounds[index].duration() * percentage;
-    sounds[index].seek(seekTime);
+
+    if (index !== currentTrackIndex) {
+        sounds[currentTrackIndex].stop();
+        currentTrackIndex = index;
+        sounds[currentTrackIndex].seek(seekTime);
+        sounds[currentTrackIndex].play();
+        isPlaying = true;
+    } else {
+        sounds[currentTrackIndex].seek(seekTime);
+        if (!isPlaying) {
+            togglePlayPause();
+        }
+    }
+
+    updateMarquee();
+    highlightCurrentTrack();
+    updatePlayPauseButtons();
+    showMarqueeIfHidden();
 }
 
 // Update progress bars periodically
@@ -179,7 +191,6 @@ function updateAllProgressBars() {
     tracks.forEach((track, index) => {
         updateProgressBar(index);
     });
-    updateGlobalProgressBar();
     requestAnimationFrame(updateAllProgressBars);
 }
 
