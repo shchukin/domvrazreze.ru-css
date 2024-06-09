@@ -200,10 +200,20 @@ tracks.forEach((track, index) => {
     const trackElement = document.createElement('div');
     trackElement.className = 'playlist-track';
     trackElement.innerHTML = `
-        <button class="play-pause-btn" onclick="playTrack(${index})">${playIcon}</button>
-        ${track.title}
-        <div class="play-progress" id="play-progress-${index}" onclick="seekTrack(event, ${index})">
-            <div class="play-progress__value"></div>
+        <div class="track">
+            <div class="track__progress">
+                <div class="play-progress" id="play-progress-${index}" onclick="seekTrack(event, ${index})">
+                    <div class="play-progress__value"></div>
+                </div>    
+            </div>
+            <div class="track__body">
+                <div class="track__title">
+                    ${track.title}
+                </div>
+                <div class="track__toggle-playback">
+                    <button class="play-pause-btn" onclick="playTrack(${index})">${playIcon}</button>
+                </div>
+            </div>
         </div>
     `;
     playlistDiv.appendChild(trackElement);

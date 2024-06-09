@@ -2,11 +2,9 @@
     position: relative;
     height: 100%;
     min-height: 5px;
-    background-color: #ccc;
 }
     .play-progress__value {
         position: absolute;
         top: 0;
         bottom: 0;
-        background-color: #007bff;
     }

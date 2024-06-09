@@ -1,0 +1,46 @@
+.track {
+    position: relative;
+}
+    .track__progress {
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        margin: -10px;
+    }
+        .current-track .track__progress .play-progress {
+            background-color: rgb(0 0 0 / 5%);
+        }
+            .current-track .track__progress .play-progress__value {
+                background-color: rgb(0 0 0 / 5%);
+            }
+
+    .track__body {
+        pointer-events: none;
+        position: relative;
+        padding-right: 60px;
+    }
+        .track__title {
+            display: flex;
+            align-items: center;
+            min-height: 40px;
+            font-size: 16px;
+            line-height: 20px;
+        }
+
+        .track__toggle-playback {
+            pointer-events: auto;
+            position: absolute;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            display: flex;
+            align-items: center;
+        }
+
+
+
+.playlist-track {
+    margin-top: 22px;
+}

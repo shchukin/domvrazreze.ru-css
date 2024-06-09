@@ -49,9 +49,10 @@
 @import url("_artists.css");
 @import url("_intro.css");
 @import url("_clearfix.css");
-@import url("_playback.css");
 @import url("_playlist.css");
 @import url("_marquee.css");
 @import url("_play-progress.css");
+@import url("_track.css");
+@import url("_play-pause-btn.css");
 
 
