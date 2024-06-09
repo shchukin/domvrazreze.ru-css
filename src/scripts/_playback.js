@@ -23,15 +23,6 @@ const sounds = tracks.map((track, index) => {
             }
         }
     });
-
-    // Update progress bar when track is played
-    sound.on('play', () => {
-        requestAnimationFrame(() => {
-            updateProgressBar(index);
-            updateGlobalProgressBar();
-        });
-    });
-
     return sound;
 });
 
@@ -60,41 +51,32 @@ function playPause() {
 
 // Function to update the marquee with the current track info
 function updateMarquee() {
-    document.getElementById('current-track').textContent = isPlaying ? tracks[currentTrackIndex].title : "No track playing";
+    document.getElementById('current-track').textContent = isPlaying ? tracks[currentTrackIndex].title : "Paused";
 }
 
 // Function to toggle the display of the marquee
 function toggleMarquee() {
     const marquee = document.getElementById('marquee');
     marquee.style.display = marquee.style.display === 'none' ? 'flex' : 'none';
-    sounds[currentTrackIndex].stop();
-    isPlaying = false;
-    updateMarquee();
 }
 
 // Function to update the progress bar of a specific track
 function updateProgressBar(index) {
     const progressBar = document.querySelector(`#progress-bar-${index} .progress-bar-inner`);
-    if (sounds[index].playing()) {
+    if (sounds[index].playing() || sounds[index].state() === 'loaded') {
         const seek = sounds[index].seek() || 0;
         const progress = (seek / sounds[index].duration()) * 100;
         progressBar.style.width = `${progress}%`;
-        requestAnimationFrame(() => updateProgressBar(index));
-    } else {
-        progressBar.style.width = '0%';
     }
 }
 
 // Function to update the global progress bar
 function updateGlobalProgressBar() {
     const progressBar = document.getElementById('global-progress-bar-inner');
-    if (sounds[currentTrackIndex].playing()) {
+    if (sounds[currentTrackIndex].playing() || sounds[currentTrackIndex].state() === 'loaded') {
         const seek = sounds[currentTrackIndex].seek() || 0;
         const progress = (seek / sounds[currentTrackIndex].duration()) * 100;
         progressBar.style.width = `${progress}%`;
-        requestAnimationFrame(updateGlobalProgressBar);
-    } else {
-        progressBar.style.width = '0%';
     }
 }
 
@@ -108,6 +90,15 @@ function highlightCurrentTrack() {
             track.classList.remove('current-track');
         }
     });
+}
+
+// Update progress bars periodically
+function updateAllProgressBars() {
+    tracks.forEach((track, index) => {
+        updateProgressBar(index);
+    });
+    updateGlobalProgressBar();
+    requestAnimationFrame(updateAllProgressBars);
 }
 
 // Populate playlist
@@ -135,3 +126,5 @@ tracks.forEach((track, index) => {
 
 // Initial marquee update
 updateMarquee();
+// Start updating progress bars
+updateAllProgressBars();
