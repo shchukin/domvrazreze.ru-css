@@ -69,11 +69,13 @@ function toggleMarquee() {
 
 // Function to update the progress bar of a specific track
 function updateProgressBar(index) {
-    const progressBar = document.querySelector(`#progress-bar-${index} .progress-bar-inner`);
+    const progressBars = document.querySelectorAll(`#progress-bar-${index} .progress-bar-inner`);
     if (sounds[index].playing() || sounds[index].state() === 'loaded') {
         const seek = sounds[index].seek() || 0;
         const progress = (seek / sounds[index].duration()) * 100;
-        progressBar.style.width = `${progress}%`;
+        progressBars.forEach(progressBar => {
+            progressBar.style.width = `${progress}%`;
+        });
     }
 }
 
@@ -89,7 +91,7 @@ function updateGlobalProgressBar() {
 
 // Function to highlight the current track in the playlist
 function highlightCurrentTrack() {
-    const playlistTracks = document.querySelectorAll('#playlist div');
+    const playlistTracks = document.querySelectorAll('#playlist .playlist-track');
     playlistTracks.forEach((track, index) => {
         if (index === currentTrackIndex) {
             track.classList.add('current-track');
@@ -112,8 +114,14 @@ function updateAllProgressBars() {
 const playlistDiv = document.getElementById('playlist');
 tracks.forEach((track, index) => {
     const trackElement = document.createElement('div');
-    trackElement.textContent = track.title;
-    trackElement.onclick = () => playTrack(index);
+    trackElement.className = 'playlist-track';
+    trackElement.innerHTML = `
+        <button onclick="playTrack(${index})">Play/Pause</button>
+        ${track.title}
+        <div class="progress-bar" id="progress-bar-${index}">
+            <div class="progress-bar-inner"></div>
+        </div>
+    `;
     playlistDiv.appendChild(trackElement);
 });
 
@@ -123,11 +131,11 @@ tracks.forEach((track, index) => {
     const instanceDiv = document.createElement('div');
     instanceDiv.className = 'audio-player';
     instanceDiv.innerHTML = `
-                <button onclick="playTrack(${index})">Play/Pause</button>
-                <div class="progress-bar" id="progress-bar-${index}">
-                    <div class="progress-bar-inner"></div>
-                </div>
-            `;
+        <button onclick="playTrack(${index})">Play/Pause</button>
+        <div class="progress-bar" id="progress-bar-${index}">
+            <div class="progress-bar-inner"></div>
+        </div>
+    `;
     audioInstancesDiv.appendChild(instanceDiv);
 });
 
