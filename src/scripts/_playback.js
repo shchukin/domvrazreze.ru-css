@@ -29,9 +29,7 @@ const sounds = tracks.map((track, index) => {
 // Function to play a specific track
 function playTrack(index) {
     if (index !== currentTrackIndex) {
-        if (isPlaying) {
-            sounds[currentTrackIndex].stop();
-        }
+        sounds[currentTrackIndex].stop();
         currentTrackIndex = index;
         sounds[currentTrackIndex].play();
         isPlaying = true;
