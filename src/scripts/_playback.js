@@ -163,6 +163,7 @@ tracks.forEach((track, index) => {
     instanceDiv.className = 'audio-player';
     instanceDiv.innerHTML = `
         <button onclick="playTrack(${index})">Play/Pause</button>
+        <span>${track.title}</span>
         <div class="progress-bar" id="progress-bar-${index}">
             <div class="progress-bar-inner"></div>
         </div>
