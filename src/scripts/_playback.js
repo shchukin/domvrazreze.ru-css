@@ -1,20 +1,32 @@
+
 const tracks = [
-    {title: "Track 1", src: "../audio/track01.mp3"},
-    {title: "Track 2", src: "../audio/track02.mp3"},
-    {title: "Track 3", src: "../audio/track03.mp3"},
-    {title: "Track 4", src: "../audio/track04.mp3"},
-    {title: "Track 5", src: "../audio/track05.mp3"},
-    {title: "Track 6", src: "../audio/track06.mp3"},
-    {title: "Track 7", src: "../audio/track07.mp3"},
-    {title: "Track 8", src: "../audio/track08.mp3"},
-    {title: "Track 9", src: "../audio/track09.mp3"},
+    { title: "Track 1", src: "../audio/track01.mp3" },
+    { title: "Track 2", src: "../audio/track02.mp3" },
+    { title: "Track 3", src: "../audio/track03.mp3" },
+    { title: "Track 4", src: "../audio/track04.mp3" },
+    { title: "Track 5", src: "../audio/track05.mp3" },
+    { title: "Track 6", src: "../audio/track06.mp3" },
+    { title: "Track 7", src: "../audio/track07.mp3" },
+    { title: "Track 8", src: "../audio/track08.mp3" },
+    { title: "Track 9", src: "../audio/track09.mp3" },
 ];
 
 let currentTrackIndex = 0;
 let isPlaying = false;
 
 // Initialize Howl instances
-const sounds = tracks.map(track => new Howl({src: [track.src]}));
+const sounds = tracks.map((track, index) => {
+    const sound = new Howl({ src: [track.src] });
+
+    // Update progress bar when track is played
+    sound.on('play', () => {
+        requestAnimationFrame(() => {
+            updateProgressBar(index);
+        });
+    });
+
+    return sound;
+});
 
 // Function to play a specific track
 function playTrack(index) {
@@ -25,7 +37,6 @@ function playTrack(index) {
     sounds[currentTrackIndex].play();
     isPlaying = true;
     updateMarquee();
-    updateProgressBars();
 }
 
 // Function to play or pause the current track
@@ -53,22 +64,16 @@ function toggleMarquee() {
     updateMarquee();
 }
 
-// Function to update the progress bars of all instances
-function updateProgressBars() {
-    const progressBarElements = document.querySelectorAll('.progress-bar-inner');
-    if (isPlaying) {
-        sounds[currentTrackIndex].on('play', () => {
-            requestAnimationFrame(() => {
-                const seek = sounds[currentTrackIndex].seek() || 0;
-                const progress = (seek / sounds[currentTrackIndex].duration()) * 100;
-                progressBarElements.forEach(bar => {
-                    bar.style.width = `${progress}%`;
-                });
-                if (isPlaying) {
-                    requestAnimationFrame(arguments.callee);
-                }
-            });
-        });
+// Function to update the progress bar of a specific track
+function updateProgressBar(index) {
+    const progressBar = document.querySelector(`#progress-bar-${index} .progress-bar-inner`);
+    if (sounds[index].playing()) {
+        const seek = sounds[index].seek() || 0;
+        const progress = (seek / sounds[index].duration()) * 100;
+        progressBar.style.width = `${progress}%`;
+        requestAnimationFrame(() => updateProgressBar(index));
+    } else {
+        progressBar.style.width = '0%';
     }
 }
 
@@ -88,7 +93,7 @@ tracks.forEach((track, index) => {
     instanceDiv.className = 'audio-player';
     instanceDiv.innerHTML = `
                 <button onclick="playTrack(${index})">Play/Pause</button>
-                <div class="progress-bar">
+                <div class="progress-bar" id="progress-bar-${index}">
                     <div class="progress-bar-inner"></div>
                 </div>
             `;
