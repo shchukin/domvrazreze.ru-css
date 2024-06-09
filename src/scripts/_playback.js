@@ -40,6 +40,7 @@ function playTrack(index) {
     }
     updateMarquee();
     highlightCurrentTrack();
+    updatePlayPauseButtons();
     showMarqueeIfHidden();
 }
 
@@ -53,6 +54,7 @@ function togglePlayPause() {
     }
     isPlaying = !isPlaying;
     updateMarquee();
+    updatePlayPauseButtons();
 }
 
 // Function to play or pause the current track from marquee
@@ -122,6 +124,7 @@ function resetToPristineState() {
     clearCurrentTrackHighlight();
     const marquee = document.getElementById('marquee');
     marquee.style.display = 'none';
+    updatePlayPauseButtons();
 }
 
 // Function to clear current track highlight
@@ -130,6 +133,30 @@ function clearCurrentTrackHighlight() {
     playlistTracks.forEach(track => {
         track.classList.remove('current-track');
     });
+}
+
+// Function to update play/pause buttons
+function updatePlayPauseButtons() {
+    const playlistButtons = document.querySelectorAll('#playlist .play-pause-btn');
+    playlistButtons.forEach((button, index) => {
+        if (index === currentTrackIndex && isPlaying) {
+            button.textContent = '⏸️'; // Pause icon
+        } else {
+            button.textContent = '▶️'; // Play icon
+        }
+    });
+
+    const instanceButtons = document.querySelectorAll('#audio-instances .play-pause-btn');
+    instanceButtons.forEach((button, index) => {
+        if (index === currentTrackIndex && isPlaying) {
+            button.textContent = '⏸️'; // Pause icon
+        } else {
+            button.textContent = '▶️'; // Play icon
+        }
+    });
+
+    const marqueeButton = document.getElementById('marquee-play-pause');
+    marqueeButton.textContent = isPlaying ? '⏸️' : '▶️';
 }
 
 // Update progress bars periodically
@@ -147,7 +174,7 @@ tracks.forEach((track, index) => {
     const trackElement = document.createElement('div');
     trackElement.className = 'playlist-track';
     trackElement.innerHTML = `
-        <button onclick="playTrack(${index})">Play/Pause</button>
+        <button class="play-pause-btn" onclick="playTrack(${index})">▶️</button>
         ${track.title}
         <div class="progress-bar" id="progress-bar-${index}">
             <div class="progress-bar-inner"></div>
@@ -162,7 +189,7 @@ tracks.forEach((track, index) => {
     const instanceDiv = document.createElement('div');
     instanceDiv.className = 'audio-player';
     instanceDiv.innerHTML = `
-        <button onclick="playTrack(${index})">Play/Pause</button>
+        <button class="play-pause-btn" onclick="playTrack(${index})">▶️</button>
         <span>${track.title}</span>
         <div class="progress-bar" id="progress-bar-${index}">
             <div class="progress-bar-inner"></div>
