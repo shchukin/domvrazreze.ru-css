@@ -34,3 +34,8 @@
     background-color: #007bff;
     position: absolute;
 }
+
+.current-track {
+    font-weight: bold;
+    color: red;
+}

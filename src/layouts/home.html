@@ -63,7 +63,6 @@
 
         <!-- Main Audio Player -->
         <div id="main-player" class="audio-player">
-            <button onclick="playPause()">Play/Pause</button>
             <div id="playlist">
                 <!-- Playlist will be populated here -->
             </div>
@@ -78,6 +77,9 @@
         <div id="marquee" class="marquee">
             <button onclick="toggleMarquee()">Close</button>
             <span id="current-track">No track playing</span>
+            <div class="progress-bar" id="global-progress-bar">
+                <div class="progress-bar-inner" id="global-progress-bar-inner"></div>
+            </div>
             <button onclick="playPause()">Play/Pause</button>
         </div>
 

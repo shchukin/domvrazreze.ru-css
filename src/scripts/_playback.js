@@ -1,4 +1,3 @@
-
 const tracks = [
     { title: "Track 1", src: "../audio/track01.mp3" },
     { title: "Track 2", src: "../audio/track02.mp3" },
@@ -16,12 +15,20 @@ let isPlaying = false;
 
 // Initialize Howl instances
 const sounds = tracks.map((track, index) => {
-    const sound = new Howl({ src: [track.src] });
+    const sound = new Howl({
+        src: [track.src],
+        onend: () => {
+            if (currentTrackIndex < tracks.length - 1) {
+                playTrack(currentTrackIndex + 1);
+            }
+        }
+    });
 
     // Update progress bar when track is played
     sound.on('play', () => {
         requestAnimationFrame(() => {
             updateProgressBar(index);
+            updateGlobalProgressBar();
         });
     });
 
@@ -37,6 +44,7 @@ function playTrack(index) {
     sounds[currentTrackIndex].play();
     isPlaying = true;
     updateMarquee();
+    highlightCurrentTrack();
 }
 
 // Function to play or pause the current track
@@ -75,6 +83,31 @@ function updateProgressBar(index) {
     } else {
         progressBar.style.width = '0%';
     }
+}
+
+// Function to update the global progress bar
+function updateGlobalProgressBar() {
+    const progressBar = document.getElementById('global-progress-bar-inner');
+    if (sounds[currentTrackIndex].playing()) {
+        const seek = sounds[currentTrackIndex].seek() || 0;
+        const progress = (seek / sounds[currentTrackIndex].duration()) * 100;
+        progressBar.style.width = `${progress}%`;
+        requestAnimationFrame(updateGlobalProgressBar);
+    } else {
+        progressBar.style.width = '0%';
+    }
+}
+
+// Function to highlight the current track in the playlist
+function highlightCurrentTrack() {
+    const playlistTracks = document.querySelectorAll('#playlist div');
+    playlistTracks.forEach((track, index) => {
+        if (index === currentTrackIndex) {
+            track.classList.add('current-track');
+        } else {
+            track.classList.remove('current-track');
+        }
+    });
 }
 
 // Populate playlist
