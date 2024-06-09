@@ -70,7 +70,11 @@ function updateMarquee() {
 // Function to toggle the display of the marquee
 function toggleMarquee() {
     const marquee = document.getElementById('marquee');
-    marquee.style.display = marquee.style.display === 'none' ? 'flex' : 'none';
+    if (marquee.style.display === 'none') {
+        marquee.style.display = 'flex';
+    } else {
+        resetToPristineState();
+    }
 }
 
 // Function to show the marquee if it is currently hidden
