@@ -28,18 +28,22 @@ const sounds = tracks.map((track, index) => {
 
 // Function to play a specific track
 function playTrack(index) {
-    if (isPlaying) {
-        sounds[currentTrackIndex].stop();
+    if (index !== currentTrackIndex) {
+        if (isPlaying) {
+            sounds[currentTrackIndex].stop();
+        }
+        currentTrackIndex = index;
+        sounds[currentTrackIndex].play();
+        isPlaying = true;
+    } else {
+        togglePlayPause();
     }
-    currentTrackIndex = index;
-    sounds[currentTrackIndex].play();
-    isPlaying = true;
     updateMarquee();
     highlightCurrentTrack();
 }
 
 // Function to play or pause the current track
-function playPause() {
+function togglePlayPause() {
     if (isPlaying) {
         sounds[currentTrackIndex].pause();
     } else {
@@ -47,6 +51,11 @@ function playPause() {
     }
     isPlaying = !isPlaying;
     updateMarquee();
+}
+
+// Function to play or pause the current track from marquee
+function playPause() {
+    togglePlayPause();
 }
 
 // Function to update the marquee with the current track info
