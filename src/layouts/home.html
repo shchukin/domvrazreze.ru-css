@@ -55,11 +55,32 @@
             </div>
         <![endif]-->
 
-        <header class="header">
-            <div class="header__inner">
-                Header
+<!--        <header class="header">-->
+<!--            <div class="header__inner">-->
+<!--                Header-->
+<!--            </div>-->
+<!--        </header>-->
+
+        <!-- Main Audio Player -->
+        <div id="main-player" class="audio-player">
+            <button onclick="playPause()">Play/Pause</button>
+            <div id="playlist">
+                <!-- Playlist will be populated here -->
             </div>
-        </header>
+        </div>
+
+        <!-- Additional Audio Instances -->
+        <div id="audio-instances">
+            <!-- Instances will be created here -->
+        </div>
+
+        <!-- Marquee -->
+        <div id="marquee" class="marquee">
+            <button onclick="toggleMarquee()">Close</button>
+            <span id="current-track">No track playing</span>
+            <button onclick="playPause()">Play/Pause</button>
+        </div>
+
 
         <div class="collage">
             <video class="collage__video collage__video--1" src="../videos/collage-01.mp4" preload="auto" muted></video>
@@ -411,10 +432,12 @@
 
         <script src="../vendors/jquery/jquery-3.7.1.min.js"></script>
         <script src="../vendors/magnific-popup/jquery.magnific-popup.min.js"></script>
+        <script src="../vendors/howler/howler.min.js"></script>
         <script src="../scripts/_mfp.js"></script>
         <script src="../scripts/_input.js"></script>
         <script src="../scripts/_collage.js"></script>
         <script src="../scripts/_mobile-collage.js"></script>
+        <script src="../scripts/_playback.js"></script>
 
     </body>
 </html>
