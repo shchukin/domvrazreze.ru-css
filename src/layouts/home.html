@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" itemscope itemtype="https://schema.org/Thing">
+<html lang="en" itemscope itemtype="https://schema.org/Thing" class="playlist-expanded">
     <head>
         <meta charset="utf-8">
         <title>Дом в разрезе</title>
@@ -55,11 +55,30 @@
             </div>
         <![endif]-->
 
-<!--        <header class="header">-->
-<!--            <div class="header__inner">-->
-<!--                Header-->
-<!--            </div>-->
-<!--        </header>-->
+        <header class="header">
+            <div class="header__detachable-panel">
+                <div class="header__wrap container">
+                    <button class="header__player-toggle" type="button"></button>
+                    <a class="header__logo" href="home.html">Дом в разрезе</a>
+                </div>
+            </div>
+        </header>
+
+        <div class="playlist">
+            <div class="playlist__wrap container">
+                <div class="playlist__body">
+                    <h2 class="playlist__heading">
+                        Плейлист
+                    </h2>
+                    <button class="playlist__close" type="button">
+        1
+                    </button>
+                    <div class="playlist__list">
+        2
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <!-- Main Audio Player -->
         <div id="main-player" class="audio-player">
@@ -441,6 +460,7 @@
         <script src="../scripts/_collage.js"></script>
         <script src="../scripts/_mobile-collage.js"></script>
         <script src="../scripts/_playback.js"></script>
+        <script src="../scripts/_header.js"></script>
 
     </body>
 </html>
