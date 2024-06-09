@@ -1,6 +1,7 @@
 .play-progress {
     position: relative;
     height: 100%;
+    min-height: 5px;
     background-color: #ccc;
 }
     .play-progress__value {

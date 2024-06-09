@@ -20,6 +20,7 @@
         position: relative;
         padding-left: 36px;
         height: 20px;
+        pointer-events: none;
     }
         .marquee__toggle-playback {
             position: absolute;
@@ -34,6 +35,7 @@
             padding: 0;
             border: none;
             cursor: pointer;
+            pointer-events: auto;
         }
             .marquee__toggle-playback svg {
                 vertical-align: top;
@@ -52,7 +54,8 @@
         }
 
         .marquee__close {
-           display: none;
+            display: none;
+            pointer-events: auto;
         }
 
 

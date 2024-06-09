@@ -163,6 +163,17 @@ function updatePlayPauseButtons() {
     marqueeButton.innerHTML = isPlaying ? pauseIcon : playIcon;
 }
 
+// Function to seek track position based on click
+function seekTrack(event, index) {
+    const progressBar = event.currentTarget;
+    const rect = progressBar.getBoundingClientRect();
+    const offsetX = event.clientX - rect.left;
+    const width = rect.width;
+    const percentage = offsetX / width;
+    const seekTime = sounds[index].duration() * percentage;
+    sounds[index].seek(seekTime);
+}
+
 // Update progress bars periodically
 function updateAllProgressBars() {
     tracks.forEach((track, index) => {
@@ -180,7 +191,7 @@ tracks.forEach((track, index) => {
     trackElement.innerHTML = `
         <button class="play-pause-btn" onclick="playTrack(${index})">${playIcon}</button>
         ${track.title}
-        <div class="play-progress" id="play-progress-${index}">
+        <div class="play-progress" id="play-progress-${index}" onclick="seekTrack(event, ${index})">
             <div class="play-progress__value"></div>
         </div>
     `;
@@ -195,7 +206,7 @@ tracks.forEach((track, index) => {
     instanceDiv.innerHTML = `
         <button class="play-pause-btn" onclick="playTrack(${index})">${playIcon}</button>
         <span>${track.title}</span>
-        <div class="play-progress" id="play-progress-${index}">
+        <div class="play-progress" id="play-progress-${index}" onclick="seekTrack(event, ${index})">
             <div class="play-progress__value"></div>
         </div>
     `;
