@@ -1,14 +1,14 @@
 .header {
-    height: var(--header-height);
+    height: 204px;
 }
     .header__detachable-panel {
         position: fixed;
         z-index: 100;
         left: 0;
-        top: 0;
+        top: 34px;
         right: 0;
         height: var(--header-height);
-        padding: 34px;
+        padding: 0 34px;
         background-image: url("../vectors/header.svg");
         background-size: 1480px 137px;
         background-repeat: no-repeat;
@@ -20,7 +20,7 @@
         }
             .header__player-toggle {
                 position: absolute;
-                left: var(--header-left-padding);
+                left: 46px;
                 top: 22px;
                 width: 86px;
                 height: 68px;
@@ -32,11 +32,10 @@
                 background-repeat: no-repeat;
                 background-position: center center;
                 cursor: pointer;
-                transition: opacity var(--transition-hover);
             }
 
             .header__player-toggle:hover {
-                opacity: 90%;
+                opacity: 80%;
             }
 
             .header__logo {
