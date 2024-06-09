@@ -1,0 +1,76 @@
+.marquee {
+    position: relative;
+}
+    .marquee__progress {
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        margin: -10px;
+    }
+        .marquee__progress .play-progress {
+            background-color: rgb(255 255 255 / 10%);
+        }
+            .marquee__progress .play-progress__value {
+                background-color: rgb(255 255 255 / 10%);
+            }
+
+    .marquee__body {
+        position: relative;
+        padding-left: 36px;
+        height: 20px;
+    }
+        .marquee__toggle-playback {
+            position: absolute;
+            left: -10px;
+            top: -10px;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: transparent;
+            padding: 0;
+            border: none;
+            cursor: pointer;
+        }
+            .marquee__toggle-playback svg {
+                vertical-align: top;
+                fill: #FFFFFF;
+                width: 24px;
+                height: 24px;
+            }
+
+        .marquee__name {
+            font-size: 16px;
+            line-height: 20px;
+            color: #FFFFFF;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .marquee__close {
+           display: none;
+        }
+
+
+
+
+
+
+/*.marquee__close {*/
+/*    position: absolute;*/
+/*    right: -10px;*/
+/*    top: -10px;*/
+/*    width: 40px;*/
+/*    height: 40px;*/
+/*    background-color: transparent;*/
+/*    border: none;*/
+/*    padding: 0;*/
+/*    text-indent: 200%;*/
+/*    white-space: nowrap;*/
+/*    overflow: hidden;*/
+
+/*}*/

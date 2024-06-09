@@ -32,10 +32,20 @@
                 background-repeat: no-repeat;
                 background-position: center center;
                 cursor: pointer;
+                text-indent: 200%;
+                white-space: nowrap;
+                overflow: hidden;
             }
 
             .header__player-toggle:hover {
                 opacity: 80%;
+            }
+
+            .header__marquee {
+                position: absolute;
+                top: 47px;
+                left: 152px;
+                width: 400px;
             }
 
             .header__logo {

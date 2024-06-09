@@ -58,7 +58,25 @@
         <header class="header">
             <div class="header__detachable-panel">
                 <div class="header__wrap container">
-                    <button class="header__player-toggle" type="button"></button>
+                    <button class="header__player-toggle" type="button">
+                        Показать плейлист
+                    </button>
+                    <div class="header__marquee">
+                        <div class="marquee" id="marquee">
+                            <div class="marquee__progress">
+                                <div class="play-progress" id="global-progress-bar">
+                                    <div class="play-progress__value" id="global-progress-bar-inner"></div>
+                                </div>
+                            </div>
+                            <div class="marquee__body">
+                                <button class="marquee__toggle-playback" id="marquee-play-pause" onclick="playPause()">
+
+                                </button>
+                                <div class="marquee__name" id="current-track">Выберите трек</div>
+                                <button class="marquee__close" onclick="toggleMarquee()">Закрыть</button>
+                            </div>
+                        </div>
+                    </div>
                     <a class="header__logo" href="home.html">Дом в разрезе</a>
                 </div>
             </div>
@@ -74,33 +92,27 @@
                         Закрыть плейлист
                     </button>
                     <div class="playlist__list">
-        2
+
+                        <!-- Main Audio Player -->
+                        <div id="main-player" class="audio-player">
+                            <div id="playlist">
+                                <!-- Playlist will be populated here -->
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- Main Audio Player -->
-        <div id="main-player" class="audio-player">
-            <div id="playlist">
-                <!-- Playlist will be populated here -->
-            </div>
-        </div>
+
 
         <!-- Additional Audio Instances -->
         <div id="audio-instances">
             <!-- Instances will be created here -->
         </div>
 
-        <!-- Marquee -->
-        <div id="marquee" class="marquee">
-            <button onclick="toggleMarquee()">Close</button>
-            <span id="current-track">No track playing</span>
-            <div class="progress-bar" id="global-progress-bar">
-                <div class="progress-bar-inner" id="global-progress-bar-inner"></div>
-            </div>
-            <button id="marquee-play-pause" onclick="playPause()">▶️</button>
-        </div>
+
 
 
 

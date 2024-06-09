@@ -1,17 +1,25 @@
 const tracks = [
-    { title: "Track 1", src: "../audio/track01.mp3" },
-    { title: "Track 2", src: "../audio/track02.mp3" },
-    { title: "Track 3", src: "../audio/track03.mp3" },
-    { title: "Track 4", src: "../audio/track04.mp3" },
-    { title: "Track 5", src: "../audio/track05.mp3" },
-    { title: "Track 6", src: "../audio/track06.mp3" },
-    { title: "Track 7", src: "../audio/track07.mp3" },
-    { title: "Track 8", src: "../audio/track08.mp3" },
-    { title: "Track 9", src: "../audio/track09.mp3" },
+    { title: "Иоган Себастьян Бах. Концерт для клавира с оркестром", src: "../audio/track01.mp3" },
+    { title: "Иоган Себастьян Бах. Хроматическая фантазия и фуга ре минор", src: "../audio/track02.mp3" },
+    { title: "Фредерик Шопен. Ноктюрн №1", src: "../audio/track03.mp3" },
+    { title: "Иоган Себастьян Бах. Концерт для клавира с оркестром", src: "../audio/track04.mp3" },
+    { title: "Иоган Себастьян Бах. Хроматическая фантазия и фуга ре минор", src: "../audio/track05.mp3" },
+    { title: "Фредерик Шопен. Ноктюрн №1", src: "../audio/track06.mp3" },
+    { title: "Иоган Себастьян Бах. Концерт для клавира с оркестром", src: "../audio/track07.mp3" },
+    { title: "Иоган Себастьян Бах. Хроматическая фантазия и фуга ре минор", src: "../audio/track08.mp3" },
+    { title: "Фредерик Шопен. Ноктюрн №1", src: "../audio/track09.mp3" },
 ];
 
 let currentTrackIndex = 0;
 let isPlaying = false;
+
+const playIcon = `<svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+    <path d="M2.482 18.837 2.02 1.714a.4.4 0 0 1 .6-.358L17.89 10.15a.4.4 0 0 1-.004.696l-14.809 8.33a.4.4 0 0 1-.596-.338Z"/>
+</svg>`;
+
+const pauseIcon = `<svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+    <path d="M7.588 1.5H2.912a.4.4 0 0 0-.4.412l.477 16.2a.4.4 0 0 0 .4.388h3.723a.4.4 0 0 0 .4-.388l.476-16.2a.4.4 0 0 0-.4-.412ZM12.412 18.5h4.676a.4.4 0 0 0 .4-.412l-.477-16.2a.4.4 0 0 0-.4-.388h-3.723a.4.4 0 0 0-.4.388l-.476 16.2a.4.4 0 0 0 .4.412Z"/>
+</svg>`;
 
 // Initialize Howl instances
 const sounds = tracks.map((track, index) => {
@@ -71,7 +79,7 @@ function updateMarquee() {
 function toggleMarquee() {
     const marquee = document.getElementById('marquee');
     if (marquee.style.display === 'none') {
-        marquee.style.display = 'flex';
+        marquee.style.display = 'block';
     } else {
         resetToPristineState();
     }
@@ -81,13 +89,13 @@ function toggleMarquee() {
 function showMarqueeIfHidden() {
     const marquee = document.getElementById('marquee');
     if (marquee.style.display === 'none') {
-        marquee.style.display = 'flex';
+        marquee.style.display = 'block';
     }
 }
 
 // Function to update the progress bar of a specific track
 function updateProgressBar(index) {
-    const progressBars = document.querySelectorAll(`#progress-bar-${index} .progress-bar-inner`);
+    const progressBars = document.querySelectorAll(`#play-progress-${index} .play-progress__value`);
     if (sounds[index].playing() || sounds[index].state() === 'loaded') {
         const seek = sounds[index].seek() || 0;
         const progress = (seek / sounds[index].duration()) * 100;
@@ -143,24 +151,16 @@ function clearCurrentTrackHighlight() {
 function updatePlayPauseButtons() {
     const playlistButtons = document.querySelectorAll('#playlist .play-pause-btn');
     playlistButtons.forEach((button, index) => {
-        if (index === currentTrackIndex && isPlaying) {
-            button.textContent = '⏸️'; // Pause icon
-        } else {
-            button.textContent = '▶️'; // Play icon
-        }
+        button.innerHTML = (index === currentTrackIndex && isPlaying) ? pauseIcon : playIcon;
     });
 
     const instanceButtons = document.querySelectorAll('#audio-instances .play-pause-btn');
     instanceButtons.forEach((button, index) => {
-        if (index === currentTrackIndex && isPlaying) {
-            button.textContent = '⏸️'; // Pause icon
-        } else {
-            button.textContent = '▶️'; // Play icon
-        }
+        button.innerHTML = (index === currentTrackIndex && isPlaying) ? pauseIcon : playIcon;
     });
 
     const marqueeButton = document.getElementById('marquee-play-pause');
-    marqueeButton.textContent = isPlaying ? '⏸️' : '▶️';
+    marqueeButton.innerHTML = isPlaying ? pauseIcon : playIcon;
 }
 
 // Update progress bars periodically
@@ -178,10 +178,10 @@ tracks.forEach((track, index) => {
     const trackElement = document.createElement('div');
     trackElement.className = 'playlist-track';
     trackElement.innerHTML = `
-        <button class="play-pause-btn" onclick="playTrack(${index})">▶️</button>
+        <button class="play-pause-btn" onclick="playTrack(${index})">${playIcon}</button>
         ${track.title}
-        <div class="progress-bar" id="progress-bar-${index}">
-            <div class="progress-bar-inner"></div>
+        <div class="play-progress" id="play-progress-${index}">
+            <div class="play-progress__value"></div>
         </div>
     `;
     playlistDiv.appendChild(trackElement);
@@ -193,10 +193,10 @@ tracks.forEach((track, index) => {
     const instanceDiv = document.createElement('div');
     instanceDiv.className = 'audio-player';
     instanceDiv.innerHTML = `
-        <button class="play-pause-btn" onclick="playTrack(${index})">▶️</button>
+        <button class="play-pause-btn" onclick="playTrack(${index})">${playIcon}</button>
         <span>${track.title}</span>
-        <div class="progress-bar" id="progress-bar-${index}">
-            <div class="progress-bar-inner"></div>
+        <div class="play-progress" id="play-progress-${index}">
+            <div class="play-progress__value"></div>
         </div>
     `;
     audioInstancesDiv.appendChild(instanceDiv);
