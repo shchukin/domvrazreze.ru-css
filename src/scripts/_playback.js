@@ -1,137 +1,90 @@
 const tracks = [
-    { title: "Track 1", src: "../audio/track01.mp3" },
-    { title: "Track 2", src: "../audio/track02.mp3" },
-    { title: "Track 3", src: "../audio/track03.mp3" },
-    { title: "Track 4", src: "../audio/track04.mp3" },
-    { title: "Track 5", src: "../audio/track05.mp3" },
-    { title: "Track 6", src: "../audio/track06.mp3" },
-    { title: "Track 7", src: "../audio/track07.mp3" },
-    { title: "Track 8", src: "../audio/track08.mp3" },
-    { title: "Track 9", src: "../audio/track09.mp3" },
+    { title: "Track 1", src: "../audio/track1.mp3" },
+    { title: "Track 2", src: "../audio/track2.mp3" },
+    { title: "Track 3", src: "../audio/track3.mp3" },
+    { title: "Track 4", src: "../audio/track4.mp3" },
+    { title: "Track 5", src: "../audio/track5.mp3" },
+    { title: "Track 6", src: "../audio/track6.mp3" },
+    { title: "Track 7", src: "../audio/track7.mp3" },
+    { title: "Track 8", src: "../audio/track8.mp3" },
+    { title: "Track 9", src: "../audio/track9.mp3" },
 ];
 
 let currentTrackIndex = 0;
-let isPlaying = false;
+let player;
+let progressInterval;
 
-// Initialize Howl instances
-const sounds = tracks.map((track, index) => {
-    const sound = new Howl({
-        src: [track.src],
-        onend: () => {
+function playTrack(index) {
+    if (player) {
+        player.stop();
+    }
+
+    player = new Howl({
+        src: [tracks[index].src],
+        html5: true,
+        onplay: function() {
+            document.getElementById('play-pause-btn').innerText = 'Pause';
+            document.getElementById('total-duration').innerText = formatTime(player.duration());
+            updateProgressBar();
+        },
+        onpause: function() {
+            document.getElementById('play-pause-btn').innerText = 'Play';
+            clearInterval(progressInterval);
+        },
+        onend: function() {
             if (currentTrackIndex < tracks.length - 1) {
-                playTrack(currentTrackIndex + 1);
+                currentTrackIndex++;
+                playTrack(currentTrackIndex);
+            } else {
+                // Jump to the first track and pause it when the end of the playlist is reached
+                currentTrackIndex = 0;
+                playTrack(currentTrackIndex);
+                player.pause();
             }
         }
     });
-    return sound;
-});
 
-// Function to play a specific track
-function playTrack(index) {
-    if (index !== currentTrackIndex) {
-        sounds[currentTrackIndex].stop();
-        currentTrackIndex = index;
-        sounds[currentTrackIndex].play();
-        isPlaying = true;
+    player.play();
+    document.getElementById('track-name').innerText = tracks[index].title;
+}
+
+document.getElementById('play-pause-btn').addEventListener('click', function() {
+    if (player && player.playing()) {
+        player.pause();
     } else {
-        togglePlayPause();
-    }
-    updateMarquee();
-    highlightCurrentTrack();
-}
-
-// Function to play or pause the current track
-function togglePlayPause() {
-    if (isPlaying) {
-        sounds[currentTrackIndex].pause();
-    } else {
-        sounds[currentTrackIndex].play();
-    }
-    isPlaying = !isPlaying;
-    updateMarquee();
-}
-
-// Function to play or pause the current track from marquee
-function playPause() {
-    togglePlayPause();
-}
-
-// Function to update the marquee with the current track info
-function updateMarquee() {
-    document.getElementById('current-track').textContent = isPlaying ? tracks[currentTrackIndex].title : "Paused";
-}
-
-// Function to toggle the display of the marquee
-function toggleMarquee() {
-    const marquee = document.getElementById('marquee');
-    marquee.style.display = marquee.style.display === 'none' ? 'flex' : 'none';
-}
-
-// Function to update the progress bar of a specific track
-function updateProgressBar(index) {
-    const progressBar = document.querySelector(`#progress-bar-${index} .progress-bar-inner`);
-    if (sounds[index].playing() || sounds[index].state() === 'loaded') {
-        const seek = sounds[index].seek() || 0;
-        const progress = (seek / sounds[index].duration()) * 100;
-        progressBar.style.width = `${progress}%`;
-    }
-}
-
-// Function to update the global progress bar
-function updateGlobalProgressBar() {
-    const progressBar = document.getElementById('global-progress-bar-inner');
-    if (sounds[currentTrackIndex].playing() || sounds[currentTrackIndex].state() === 'loaded') {
-        const seek = sounds[currentTrackIndex].seek() || 0;
-        const progress = (seek / sounds[currentTrackIndex].duration()) * 100;
-        progressBar.style.width = `${progress}%`;
-    }
-}
-
-// Function to highlight the current track in the playlist
-function highlightCurrentTrack() {
-    const playlistTracks = document.querySelectorAll('#playlist div');
-    playlistTracks.forEach((track, index) => {
-        if (index === currentTrackIndex) {
-            track.classList.add('current-track');
+        if (player && !player.playing()) {
+            player.play();
         } else {
-            track.classList.remove('current-track');
+            playTrack(currentTrackIndex);
         }
-    });
-}
-
-// Update progress bars periodically
-function updateAllProgressBars() {
-    tracks.forEach((track, index) => {
-        updateProgressBar(index);
-    });
-    updateGlobalProgressBar();
-    requestAnimationFrame(updateAllProgressBars);
-}
-
-// Populate playlist
-const playlistDiv = document.getElementById('playlist');
-tracks.forEach((track, index) => {
-    const trackElement = document.createElement('div');
-    trackElement.textContent = track.title;
-    trackElement.onclick = () => playTrack(index);
-    playlistDiv.appendChild(trackElement);
+    }
 });
 
-// Create additional audio instances
-const audioInstancesDiv = document.getElementById('audio-instances');
-tracks.forEach((track, index) => {
-    const instanceDiv = document.createElement('div');
-    instanceDiv.className = 'audio-player';
-    instanceDiv.innerHTML = `
-                <button onclick="playTrack(${index})">Play/Pause</button>
-                <div class="progress-bar" id="progress-bar-${index}">
-                    <div class="progress-bar-inner"></div>
-                </div>
-            `;
-    audioInstancesDiv.appendChild(instanceDiv);
+document.getElementById('progress-bar').addEventListener('input', function() {
+    const progressBar = document.getElementById('progress-bar');
+    const seekTime = player.duration() * (progressBar.value / 100);
+    player.seek(seekTime);
 });
 
-// Initial marquee update
-updateMarquee();
-// Start updating progress bars
-updateAllProgressBars();
+function formatTime(seconds) {
+    let mins = Math.floor(seconds / 60);
+    let secs = Math.floor(seconds % 60);
+    return `${mins < 10 ? '0' : ''}${mins}:${secs < 10 ? '0' : ''}${secs}`;
+}
+
+function updateProgressBar() {
+    const progressBar = document.getElementById('progress-bar');
+    const currentDuration = document.getElementById('current-duration');
+
+    // Clear any existing interval
+    clearInterval(progressInterval);
+
+    // Update progress bar only if the player is playing
+    if (player && player.playing()) {
+        progressInterval = setInterval(() => {
+            const progress = (player.seek() / player.duration()) * 100;
+            progressBar.value = progress;
+            currentDuration.innerText = formatTime(player.seek());
+        }, 1000); // Refresh every 1 second
+    }
+}

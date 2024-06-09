@@ -55,33 +55,24 @@
             </div>
         <![endif]-->
 
-<!--        <header class="header">-->
-<!--            <div class="header__inner">-->
-<!--                Header-->
-<!--            </div>-->
-<!--        </header>-->
 
-        <!-- Main Audio Player -->
-        <div id="main-player" class="audio-player">
-            <div id="playlist">
-                <!-- Playlist will be populated here -->
+        <div id="audio-player">
+            <div class="controls">
+                <button id="play-pause-btn">Play</button>
+                <span id="track-name">Track Name</span>
+                <span id="current-duration">00:00</span> / <span id="total-duration">00:00</span>
+                <input type="range" id="progress-bar" min="0" max="100" value="0">
             </div>
         </div>
 
-        <!-- Additional Audio Instances -->
-        <div id="audio-instances">
-            <!-- Instances will be created here -->
-        </div>
 
-        <!-- Marquee -->
-        <div id="marquee" class="marquee">
-            <button onclick="toggleMarquee()">Close</button>
-            <span id="current-track">No track playing</span>
-            <div class="progress-bar" id="global-progress-bar">
-                <div class="progress-bar-inner" id="global-progress-bar-inner"></div>
-            </div>
-            <button onclick="playPause()">Play/Pause</button>
-        </div>
+
+
+
+
+
+
+
 
 
         <div class="collage">
