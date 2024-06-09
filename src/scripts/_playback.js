@@ -20,6 +20,8 @@ const sounds = tracks.map((track, index) => {
         onend: () => {
             if (currentTrackIndex < tracks.length - 1) {
                 playTrack(currentTrackIndex + 1);
+            } else {
+                resetToPristineState();
             }
         }
     });
@@ -38,6 +40,7 @@ function playTrack(index) {
     }
     updateMarquee();
     highlightCurrentTrack();
+    showMarqueeIfHidden();
 }
 
 // Function to play or pause the current track
@@ -46,6 +49,7 @@ function togglePlayPause() {
         sounds[currentTrackIndex].pause();
     } else {
         sounds[currentTrackIndex].play();
+        showMarqueeIfHidden();
     }
     isPlaying = !isPlaying;
     updateMarquee();
@@ -65,6 +69,14 @@ function updateMarquee() {
 function toggleMarquee() {
     const marquee = document.getElementById('marquee');
     marquee.style.display = marquee.style.display === 'none' ? 'flex' : 'none';
+}
+
+// Function to show the marquee if it is currently hidden
+function showMarqueeIfHidden() {
+    const marquee = document.getElementById('marquee');
+    if (marquee.style.display === 'none') {
+        marquee.style.display = 'flex';
+    }
 }
 
 // Function to update the progress bar of a specific track
@@ -98,6 +110,24 @@ function highlightCurrentTrack() {
         } else {
             track.classList.remove('current-track');
         }
+    });
+}
+
+// Function to reset to pristine state
+function resetToPristineState() {
+    sounds[currentTrackIndex].stop();
+    currentTrackIndex = 0;
+    isPlaying = false;
+    updateMarquee();
+    clearCurrentTrackHighlight();
+    toggleMarquee();
+}
+
+// Function to clear current track highlight
+function clearCurrentTrackHighlight() {
+    const playlistTracks = document.querySelectorAll('#playlist .playlist-track');
+    playlistTracks.forEach(track => {
+        track.classList.remove('current-track');
     });
 }
 
