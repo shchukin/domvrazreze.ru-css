@@ -149,7 +149,7 @@ function updatePlayPauseButtons() {
         button.innerHTML = (index === currentTrackIndex && isPlaying) ? pauseIcon : playIcon;
     });
 
-    const instanceButtons = document.querySelectorAll('#audio-instances .play-pause-btn');
+    const instanceButtons = document.querySelectorAll('.fragment__player .play-pause-btn');
     instanceButtons.forEach((button, index) => {
         button.innerHTML = (index === currentTrackIndex && isPlaying) ? pauseIcon : playIcon;
     });
@@ -219,19 +219,22 @@ tracks.forEach((track, index) => {
     playlistDiv.appendChild(trackElement);
 });
 
-// Create additional audio instances
-const audioInstancesDiv = document.getElementById('audio-instances');
-tracks.forEach((track, index) => {
-    const instanceDiv = document.createElement('div');
-    instanceDiv.className = 'audio-player';
-    instanceDiv.innerHTML = `
-        <button class="play-pause-btn" onclick="playTrack(${index})">${playIcon}</button>
-        <span>${track.title}</span>
-        <div class="play-progress" id="play-progress-${index}" onclick="seekTrack(event, ${index})">
-            <div class="play-progress__value"></div>
-        </div>
-    `;
-    audioInstancesDiv.appendChild(instanceDiv);
+// Create additional audio instances in fragment__player divs
+const fragmentPlayers = document.querySelectorAll('.fragment__player');
+fragmentPlayers.forEach((fragmentPlayer, index) => {
+    if (index < tracks.length) {
+        const track = tracks[index];
+        const instanceDiv = document.createElement('div');
+        instanceDiv.className = 'audio-player';
+        instanceDiv.innerHTML = `
+            <button class="play-pause-btn" onclick="playTrack(${index})">${playIcon}</button>
+            <span>${track.title}</span>
+            <div class="play-progress" id="play-progress-${index}" onclick="seekTrack(event, ${index})">
+                <div class="play-progress__value"></div>
+            </div>
+        `;
+        fragmentPlayer.appendChild(instanceDiv);
+    }
 });
 
 // Initial setup

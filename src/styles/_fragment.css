@@ -77,11 +77,6 @@
 
             .fragment__player {
                 margin-top: 16px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                height: 85px;
-                background: #BFBBAD;
             }
 
 
