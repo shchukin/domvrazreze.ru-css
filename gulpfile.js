@@ -195,6 +195,16 @@ gulp.task('audio', function () {
 });
 
 
+// Fonts: copy
+
+gulp.task('fonts', function () {
+    return gulp.src('src/fonts/**/*')
+        .pipe(plumber())
+        .pipe(gulp.dest('build/fonts/'))
+        ;
+});
+
+
 // Markups: copy and change symbols <img> to sprite <svg>
 
 gulp.task('markups', function () {
@@ -301,7 +311,7 @@ gulp.task('lint', function () {
 
 
 gulp.task('default', function (fn) {
-    run('clean', 'manifest', 'favicon', 'temp', 'content', 'images', 'videos', 'audio', 'markups', 'layouts', 'vendors', 'scripts', 'symbols', 'styles', 'lint', fn);
+    run('clean', 'manifest', 'favicon', 'temp', 'content', 'images', 'videos', 'audio', 'fonts', 'markups', 'layouts', 'vendors', 'scripts', 'symbols', 'styles', 'lint', fn);
 });
 
 
