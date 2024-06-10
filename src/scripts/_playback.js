@@ -219,17 +219,18 @@ tracks.forEach((track, index) => {
     playlistDiv.appendChild(trackElement);
 });
 
-// Create additional audio instances in fragment__player divs
+// Create additional audio instances in fragment__player divs based on data-audio attribute
 const fragmentPlayers = document.querySelectorAll('.fragment__player');
-fragmentPlayers.forEach((fragmentPlayer, index) => {
-    if (index < tracks.length) {
-        const track = tracks[index];
+fragmentPlayers.forEach(fragmentPlayer => {
+    const audioIndex = parseInt(fragmentPlayer.getAttribute('data-audio'), 10) - 1;
+    if (audioIndex >= 0 && audioIndex < tracks.length) {
+        const track = tracks[audioIndex];
         const instanceDiv = document.createElement('div');
         instanceDiv.className = 'audio-player';
         instanceDiv.innerHTML = `
-            <button class="play-pause-btn" onclick="playTrack(${index})">${playIcon}</button>
+            <button class="play-pause-btn" onclick="playTrack(${audioIndex})">${playIcon}</button>
             <span>${track.title}</span>
-            <div class="play-progress" id="play-progress-${index}" onclick="seekTrack(event, ${index})">
+            <div class="play-progress" id="play-progress-${audioIndex}" onclick="seekTrack(event, ${audioIndex})">
                 <div class="play-progress__value"></div>
             </div>
         `;
