@@ -282,7 +282,8 @@
         padding-bottom: 32px;
     }
         .footer__primary {
-            /*background-image: url("../vectors/footer.svg");*/
+            background-image: none;
+            background-color: #605E7D;
             /*background-size: 1548px 100%;*/
             /*background-repeat: no-repeat;*/
             /*background-position: center center;*/
@@ -314,7 +315,7 @@
                     }
 
                     .footer__contains-1 {
-                        /*margin-left: 100px;*/
+                        margin-left: 0;
                         margin-top: 16px;
                     }
 
@@ -349,7 +350,7 @@
                         margin-left: 0;
                     }
                         .footer__sub-heading {
-                            /*margin-top: 40px;*/
+                            margin-top: 40px;
                             /*display: block;*/
                             /*font-weight: bold;*/
                             /*font-size: 18px;*/
