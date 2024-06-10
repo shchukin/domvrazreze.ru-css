@@ -2,6 +2,11 @@
     position: relative; /* перерываем картинку из предыдущего пункта     */
     padding-bottom: 180px;
 }
+
+.fragment:last-child {
+    padding-bottom: 0;
+}
+
     .fragment__wrap {
         position: relative; /* для позиционирования .fragment__wrap::after */
         display: flex;
