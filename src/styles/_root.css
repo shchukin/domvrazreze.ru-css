@@ -46,6 +46,14 @@
 }
 
 
+@media (width < 740px) {
+
+    :root {
+        --header-height: 70px;
+    }
+}
+
+
 
 
 :root {

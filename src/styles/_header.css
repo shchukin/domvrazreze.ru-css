@@ -186,3 +186,85 @@
     }
 
 }
+
+
+
+@media (width < 740px) {
+
+    .header {
+        height: var(--header-height);
+    }
+        .header__detachable-panel {
+            position: fixed;
+            top: 0;
+            height: var(--header-height);
+            background-image: none;
+            background-color: #5E607E;
+        }
+            .header__wrap {
+                /*position: relative;*/
+                /*height: 100%;*/
+            }
+                .header__player-toggle {
+                    left: calc(-1 * var(--container-padding));
+                    top: 0;
+                    width: calc(2* var(--container-padding) + 42px); /* 42 -- ширина иконки */
+                    height: var(--header-height);
+                    background-size: 42px 31px;
+                }
+
+                .header__player-toggle:hover {
+                    /*opacity: 80%;*/
+                }
+
+                .header__marquee {
+                    /*position: absolute;*/
+                    /*top: 61px;*/
+                    /*left: 152px;*/
+                    /*width: 400px;*/
+                }
+
+                .header__logo {
+                    /*position: absolute;*/
+                    /*left: 0;*/
+                    /*right: 0;*/
+                    /*top: 14px;*/
+                    /*margin-left: auto;*/
+                    /*margin-right: auto;*/
+                    /*display: block;*/
+                    width: 48px;
+                    height: 48px;
+                    /*background-image: url("../images/footer-logo.png");*/
+                    /*background-size: contain;*/
+                    /*background-repeat: no-repeat;*/
+                    /*background-position: center center;*/
+                    /*text-indent: 200%;*/
+                    /*white-space: nowrap;*/
+                    /*overflow: hidden;*/
+                }
+
+                .header__burger {
+                    position: absolute;
+                    right: calc(-1 * var(--container-padding) + 2px); /* 2px на всякий случай чтобы не совсем к краю, чтобы вдруг не вызывать скроллбар */
+                    top: 0;
+                    width: calc(2 * var(--container-padding) + 44px); /* 44 -- ширина иконки */
+                    height: var(--header-height);
+                    /*border: none;*/
+                    /*padding: 0;*/
+                    /*background-color: transparent;*/
+                    /*background-image: url("../vectors/burger.svg");*/
+                    background-size: 44px 44px;
+                    /*background-repeat: no-repeat;*/
+                    /*background-position: center center;*/
+                    /*cursor: pointer;*/
+                }
+
+                .header__burger:hover {
+                    /*opacity: 80%;*/
+                }
+
+                .menu-expanded .header__burger {
+                    /*background-image: url("../vectors/burger-close.svg");*/
+                }
+    }
+}
