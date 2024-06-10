@@ -55,6 +55,13 @@
     padding-bottom: 23px;
     clip-path: polygon(1.1073% 0, 99.1482% 11.1764%, 100% 95.1411%, 0 100%);
 }
+
+.fragment:nth-child(even) .track--instance {
+    padding-top: 42px;
+    padding-bottom: 22px;
+    clip-path: polygon(1.109% 18.6634%, 100% 0, 98.7378% 96.048%, 0 100%);
+}
+
     .track--instance .track__progress {
         position: absolute;
         left: 0;
@@ -83,6 +90,7 @@
         .track--instance .track__title {
             display: flex;
             align-items: center;
+            max-width: 329px;
             min-height: 40px;
             font-size: 16px;
             line-height: 20px;
@@ -92,11 +100,16 @@
             pointer-events: auto;
             position: absolute;
             right: 16px;
-            top: 0;
+            top: 6px;
             bottom: 0;
             display: flex;
             align-items: center;
         }
+
+        .fragment:nth-child(even) .track__toggle-playback {
+            top: -10px;
+        }
+
             .track--instance .play-pause-btn {
                 color: inherit;
             }
