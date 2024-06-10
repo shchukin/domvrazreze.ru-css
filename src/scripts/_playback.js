@@ -273,7 +273,7 @@ fragmentPlayers.forEach(fragmentPlayer => {
         const instanceDiv = document.createElement('div');
         instanceDiv.className = 'audio-player';
         instanceDiv.innerHTML = `
-            <div class="track track--instance">
+            <div class="track track--instance" style="background-color: ${track.backgroundColor}; color: ${track.textColor};">
                 <div class="track__progress">
                     <div class="play-progress" id="play-progress-${audioIndex}" onclick="seekTrack(event, ${audioIndex})">
                         <div class="play-progress__value"></div>
@@ -287,11 +287,8 @@ fragmentPlayers.forEach(fragmentPlayer => {
                         <button class="play-pause-btn" onclick="playTrack(${audioIndex})">${playIcon}</button>
                     </div>
                 </div>
-                
             </div>
         `;
-        instanceDiv.style.backgroundColor = track.backgroundColor;
-        instanceDiv.style.color = track.textColor;
         fragmentPlayer.appendChild(instanceDiv);
     }
 });

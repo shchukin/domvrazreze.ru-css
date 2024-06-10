@@ -53,6 +53,7 @@
     position: relative;
     padding-top: 22px;
     padding-bottom: 23px;
+    clip-path: polygon(1.1073% 0, 99.1482% 11.1764%, 100% 95.1411%, 0 100%);
 }
     .track--instance .track__progress {
         position: absolute;
