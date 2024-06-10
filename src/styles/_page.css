@@ -5,7 +5,7 @@
 
 @media (width < 740px) {
 
-    .playlist-expanded .page {
+    .playlist-expanded:not(.menu-expanded) .page {
         display: none;
     }
 

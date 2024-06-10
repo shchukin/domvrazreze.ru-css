@@ -12,7 +12,11 @@ body {
 
 @media (width < 740px) {
 
-    .playlist-expanded body {
+    .playlist-expanded:not(.menu-expanded) body {
+        background-color: #FFFFFF;
+    }
+
+    .menu-expanded body {
         background-color: #FFFFFF;
     }
 }

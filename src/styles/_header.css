@@ -41,7 +41,7 @@
                 opacity: 80%;
             }
 
-            .playlist-expanded .header__player-toggle {
+            .playlist-expanded:not(.menu-expanded) .header__player-toggle {
                 background-image: url("../vectors/burger-close.svg");
                 background-size: 60px 60px;
             }
@@ -229,7 +229,7 @@
                     background-color: rgb(96 94 125 / 80%);
                 }
 
-                /*.playlist-expanded .header__marquee {*/
+                /*.playlist-expanded:not(.menu-expanded) .header__marquee {*/
                 /*    display: none; !* неудачно накладывается один крестик на другой *!*/
                 /*}*/
 
