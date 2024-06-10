@@ -56,10 +56,95 @@
         <![endif]-->
 
         <header class="header">
-            <div class="header__inner">
-                Header
+            <div class="header__detachable-panel">
+                <div class="header__wrap static-container">
+                    <button class="header__player-toggle" type="button">
+                        Показать плейлист
+                    </button>
+                    <div class="header__marquee">
+                        <div class="marquee" id="marquee" style="display: none">
+                            <div class="marquee__progress">
+                                <div class="play-progress" id="global-progress-bar" onclick="seekTrack(event, currentTrackIndex)">
+                                    <div class="play-progress__value" id="global-progress-bar-inner"></div>
+                                </div>
+                            </div>
+                            <div class="marquee__body">
+                                <button class="marquee__toggle-playback" id="marquee-play-pause" onclick="playPause()">
+
+                                </button>
+                                <div class="marquee__title" id="current-track">Выберите трек</div>
+                                <button class="marquee__close" onclick="toggleMarquee()">Закрыть</button>
+                            </div>
+                        </div>
+                    </div>
+                    <a class="header__logo" href="home.html">Дом в разрезе</a>
+                    <button class="header__burger">
+
+                    </button>
+                </div>
             </div>
         </header>
+
+        <div class="playlist">
+            <div class="playlist__wrap static-container">
+                <div class="playlist__body">
+                    <h2 class="playlist__heading">
+                        Плейлист
+                    </h2>
+                    <!--                    <button class="playlist__close" type="button">-->
+                    <!--                        Закрыть плейлист-->
+                    <!--                    </button>-->
+                    <div class="playlist__list">
+
+                        <!-- Main Audio Player -->
+                        <div id="main-player" class="audio-player">
+                            <div id="playlist">
+                                <!-- Playlist will be populated here -->
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="menu">
+            <div class="menu__wrap static-container">
+                <div class="menu__body">
+                    <!--                    <button class="menu__close" type="button">-->
+                    <!--                        Закрыть плейлист-->
+                    <!--                    </button>-->
+                    <div class="menu__inner">
+                        <div class="menu__contains-1">
+                            <a class="menu__link" href="#">Тайны</a>
+                            <a class="menu__link" href="#">Жители</a>
+                            <a class="menu__link" href="#">Прогулки<br class="menu__line-break"> по Ленинграду</a>
+                            <a class="menu__link" href="#">Художники</a>
+                            <a class="menu__link" href="#">Поэты</a>
+                        </div>
+                        <div class="menu__contains-2">
+                            <a class="menu__link" href="#">Музыка</a>
+                            <a class="menu__link" href="#">Игры</a>
+                            <a class="menu__link" href="#">1931 год</a>
+                            <a class="menu__link" href="#">Посвящения</a>
+                        </div>
+                        <div class="menu__pages">
+                            <b class="menu__sub-heading">
+                                <a class="link link--inverted" href="#">О проекте</a>
+                            </b>
+                            <div class="menu__secondary-nav">
+                                <a class="menu__alt-link" href="#">Публикации о проекте</a>
+                                <a class="menu__alt-link" href="#">СМИ о проекте</a>
+                                <a class="menu__alt-link" href="#">Дополнительные ресурсы</a>
+                            </div>
+                            <b class="menu__sub-heading">
+                                <a class="link link--inverted" href="#">Новости</a>
+                            </b>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <div class="page">
 

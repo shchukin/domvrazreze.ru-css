@@ -3,6 +3,7 @@
     const $html = $('html');
 
     $('.header__player-toggle').on('click', function() {
+        $html.removeClass('menu-expanded');
         $html.toggleClass('playlist-expanded');
     });
 
@@ -25,6 +26,7 @@
 
 
     $('.header__burger').on('click', function() {
+        $html.removeClass('playlist-expanded');
         $html.toggleClass('menu-expanded');
     });
 
