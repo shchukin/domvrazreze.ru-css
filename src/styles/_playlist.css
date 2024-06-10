@@ -19,8 +19,7 @@
             pointer-events: auto;
             position: relative;
             width: 456px;
-            padding-top: 53px;
-            padding-bottom: 4px;
+            padding: 53px 1px 4px; /* 1px потому что фоновая картинка как бы бордюр */
             background-color: #FFFFFF;
             background-image: url("../vectors/playlist-center.svg");
             background-size: 100% auto;
@@ -80,3 +79,89 @@
                 max-height: calc(100vh - 350px);
                 overflow-y: auto;
             }
+
+
+
+@media (width < 1500px) {
+
+    .playlist {
+        /*position: fixed;*/
+        /*z-index: 80;*/
+        left: 0;
+        /*right: 0;*/
+        top: 110px;
+        /*pointer-events: none;*/
+        /*display: none;*/
+    }
+
+    .playlist-expanded .playlist {
+        /*display: block;*/
+    }
+        .playlist__wrap {
+            /*padding-left: 14px;*/
+        }
+            .playlist__body {
+                /*pointer-events: auto;*/
+                /*position: relative;*/
+                /*width: 456px;*/
+                /*padding: 53px 1px 4px; !* 1px потому что фоновая картинка как бы бордюр *!*/
+                /*background-color: #FFFFFF;*/
+                /*background-image: url("../vectors/playlist-center.svg");*/
+                /*background-size: 100% auto;*/
+                /*background-repeat: repeat-y;*/
+                /*background-position: center center;*/
+            }
+
+            .playlist__body::after {
+                /*content: "";*/
+                /*position: absolute;*/
+                /*left: 0;*/
+                /*right: 0;*/
+                /*top: 100%;*/
+                /*height: 53px;*/
+                /*display: block;*/
+                /*background-image: url("../vectors/playlist-bottom.svg");*/
+                /*background-size: 100% auto;*/
+                /*background-repeat: no-repeat;*/
+                /*background-position: center top;*/
+            }
+                .playlist__heading {
+                    /*margin-top: 0;*/
+                    /*margin-bottom: 0;*/
+                    /*padding-left: 24px;*/
+                    /*font-family: var(--font-heading);*/
+                    /*font-weight: bold;*/
+                    /*font-size: 38px;*/
+                    /*line-height: 38px;*/
+                    /*color: #605E7D;*/
+                }
+
+                .playlist__close {
+                    /*position: absolute;*/
+                    /*z-index: 2000;*/
+                    /*right: 0;*/
+                    /*top: 10px;*/
+                    /*border: none;*/
+                    /*padding: 0;*/
+                    /*width: 70px;*/
+                    /*height: 45px;*/
+                    /*background-color: transparent;*/
+                    /*background-image: url("../vectors/cross.svg");*/
+                    /*background-size: 21px 20px;*/
+                    /*background-repeat: no-repeat;*/
+                    /*background-position: center center;*/
+                    /*text-indent: 200%;*/
+                    /*white-space: nowrap;*/
+                    /*overflow: hidden;*/
+                    /*cursor: pointer;*/
+                }
+
+                .playlist__close:hover {
+                    /*opacity: 80%;*/
+                }
+
+                .playlist__list {
+                    /*max-height: calc(100vh - 350px);*/
+                    /*overflow-y: auto;*/
+                }
+}

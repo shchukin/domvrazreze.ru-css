@@ -16,7 +16,6 @@
     /*--disabled-background: #F6F6F6;*/
     /*--disabled-color: #999999;*/
     /*--error: #FF0033;*/
-    --header-height: 137px;
     --gray: #605E7D;
 }
 
@@ -31,6 +30,21 @@
         --container-padding: 16px;
     }
 }
+
+
+
+:root {
+    --header-height: 137px;
+}
+
+
+@media (width < 1500px) {
+
+    :root {
+        --header-height: 109px;
+    }
+}
+
 
 
 

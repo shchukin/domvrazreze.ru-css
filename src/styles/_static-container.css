@@ -1,0 +1,23 @@
+.static-container {
+    width: 1480px;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media (width < 1500px) {
+
+    .static-container {
+        width: 1240px;
+    }
+}
+
+@media (width < 740px) {
+
+    .static-container {
+        width: auto;
+        border-left-width: var(--container-padding);
+        border-right-width: var(--container-padding);
+    }
+}

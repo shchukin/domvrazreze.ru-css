@@ -117,7 +117,7 @@ function playPause() {
 
 // Function to update the marquee with the current track info
 function updateMarquee() {
-    document.getElementById('current-track').textContent = tracks[currentTrackIndex].title;
+    document.getElementById('current-track').innerHTML = tracks[currentTrackIndex].title;
 }
 
 // Function to toggle the display of the marquee
