@@ -1,57 +1,57 @@
 const tracks = [
     {
-        title: "Иоган Себастьян Бах. Концерт для клавира с оркестром",
-        src: "../audio/track01.mp3",
-        backgroundColor: "#BFBBAD",
-        textColor: "#000000"
+        title: 'В. Ладимир Дешевов. Рельсы. Исполняет Антон Батагов (фортепиано)',
+        src: '../audio/track01.mp3',
+        backgroundColor: '#BFBBAD',
+        textColor: '#000000'
     },
     {
-        title: "Иоган Себастьян Бах. Хроматическая фантазия и фуга ре минор",
-        src: "../audio/track02.mp3",
-        backgroundColor: "#253657",
-        textColor: "#FFFFFF"
+        title: 'Вольфганг Амадей Моцарт. Концерт&nbsp;№23 ля мажор для фортепиано <span class="nobr">с оркестром, ч.1.</span> Исполняет Мария Юдина (фортепиано), Большой симфонический оркестр Всесоюзного радио. Дирижёр Сергей Горчаков. 1948г.',
+        src: '../audio/track02.mp3',
+        backgroundColor: '#253657',
+        textColor: '#FFFFFF'
     },
     {
-        title: "Фредерик Шопен. Ноктюрн №1",
-        src: "../audio/track03.mp3",
-        backgroundColor: "#C54F35",
-        textColor: "#FFFFFF"
+        title: 'Макс Авельевич Кюсс. «Амурские волны»',
+        src: '../audio/track03.mp3',
+        backgroundColor: '#C54F35',
+        textColor: '#FFFFFF'
     },
     {
-        title: "Иоган Себастьян Бах. Концерт для клавира с оркестром",
-        src: "../audio/track04.mp3",
-        backgroundColor: "#D29A16",
-        textColor: "#FFFFFF"
+        title: 'Александр Скрябин. Листок из <span class="nobr">альбома, №1.</span> Исполняет Владимир Софроницкий (фортепиано)',
+        src: '../audio/track04.mp3',
+        backgroundColor: '#D29A16',
+        textColor: '#FFFFFF'
     },
     {
-        title: "Иоган Себастьян Бах. Хроматическая фантазия и фуга ре минор",
-        src: "../audio/track05.mp3",
-        backgroundColor: "#A0883B",
-        textColor: "#FFFFFF"
+        title: 'Людвиг ван Бетховен. Симфония&nbsp;№7 <span class="nobr">ля мажор, ч.2.</span> Исполняет Берлинский филармонический оркестр. Дирижер Герберт фон&nbsp;Караян',
+        src: '../audio/track05.mp3',
+        backgroundColor: '#A0883B',
+        textColor: '#FFFFFF'
     },
     {
-        title: "Фредерик Шопен. Ноктюрн №1",
-        src: "../audio/track06.mp3",
-        backgroundColor: "#B84934",
-        textColor: "#FFFFFF"
+        title: 'Иоганн Себастьян Бах. Концерт для клавира с&nbsp;оркестром <span class="nobr">ре минор, ч.1.</span> Исполняет Мария Юдина (фортепиано), Симфонический оркестр Всесоюзного радио. Дирижер Курт Зандерлинг. 1956г.',
+        src: '../audio/track06.mp3',
+        backgroundColor: '#B84934',
+        textColor: '#FFFFFF'
     },
     {
-        title: "Иоган Себастьян Бах. Концерт для клавира с оркестром",
-        src: "../audio/track07.mp3",
-        backgroundColor: "#1F416A",
-        textColor: "#FFFFFF"
+        title: 'Иоганн Себастьян Бах. Хроматическая фантазия и&nbsp;фуга ре&nbsp;минор',
+        src: '../audio/track07.mp3',
+        backgroundColor: '#1F416A',
+        textColor: '#FFFFFF'
     },
     {
-        title: "Иоган Себастьян Бах. Хроматическая фантазия и фуга ре минор",
-        src: "../audio/track08.mp3",
-        backgroundColor: "#3F6171",
-        textColor: "#FFFFFF"
+        title: 'Дмитрий Шостакович. Антракт. Из оперы Нос. Исполняет Камерный оркестр Государственного академического Большого театра. Дирижер Геннадий Рождественский. 1975г.',
+        src: '../audio/track08.mp3',
+        backgroundColor: '#3F6171',
+        textColor: '#FFFFFF'
     },
     {
-        title: "Фредерик Шопен. Ноктюрн №1",
-        src: "../audio/track09.mp3",
-        backgroundColor: "#7888A2",
-        textColor: "#FFFFFF"
+        title: 'Дитрих Букстехуде. Аллилуйя',
+        src: '../audio/track09.mp3',
+        backgroundColor: '#7888A2',
+        textColor: '#FFFFFF'
     },
 ];
 
@@ -253,7 +253,9 @@ tracks.forEach((track, index) => {
             </div>
             <div class="track__body">
                 <div class="track__title">
-                    ${track.title}
+                    <div class="track__text-line">
+                        ${track.title}
+                    </div>
                 </div>
                 <div class="track__toggle-playback">
                     <button class="play-pause-btn" onclick="playTrack(${index})">${playIcon}</button>
@@ -281,7 +283,9 @@ fragmentPlayers.forEach(fragmentPlayer => {
                 </div>
                 <div class="track__body">
                     <div class="track__title">
-                        ${track.title}
+                        <div class="track__text-line">
+                            ${track.title}
+                        </div>
                     </div>
                     <div class="track__toggle-playback">
                         <button class="play-pause-btn" onclick="playTrack(${audioIndex})">${playIcon}</button>
