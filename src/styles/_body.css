@@ -8,3 +8,11 @@ body {
     font-size: var(--body-s-font);
     line-height: var(--body-s-line);
 }
+
+
+@media (width < 740px) {
+
+    .playlist-expanded body {
+        background-color: #FFFFFF;
+    }
+}

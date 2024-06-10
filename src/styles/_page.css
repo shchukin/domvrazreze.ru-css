@@ -1,0 +1,11 @@
+.page {
+
+}
+
+.playlist-expanded .page {
+    display: none;
+}
+
+.menu-expanded .page {
+    display: none;
+}
