@@ -20,15 +20,15 @@
         }
             .header__player-toggle {
                 position: absolute;
-                left: 46px;
-                top: 36px;
-                width: 86px;
-                height: 68px;
+                left: 36px;
+                top: 26px;
+                width: 106px;
+                height: 88px;
                 border: none;
                 padding: 0;
                 background-color: transparent;
                 background-image: url("../vectors/header-playlist.svg");
-                background-size: contain;
+                background-size: 86px 68px;
                 background-repeat: no-repeat;
                 background-position: center center;
                 cursor: pointer;
@@ -43,7 +43,7 @@
 
             .playlist-expanded:not(.menu-expanded) .header__player-toggle {
                 background-image: url("../vectors/burger-close.svg");
-                background-size: 60px 60px;
+                background-size: 44px 44px;
             }
 
             .header__marquee {
@@ -80,10 +80,10 @@
 
             .header__burger {
                 position: absolute;
-                right: 33px;
-                top: 31px;
-                width: 60px;
-                height: 60px;
+                right: 23px;
+                top: 21px;
+                width: 80px;
+                height: 80px;
                 border: none;
                 padding: 0;
                 background-color: transparent;
@@ -120,15 +120,15 @@
             }
                 .header__player-toggle {
                     /*position: absolute;*/
-                    left: 30px;
-                    top: 28px;
-                    width: 68px;
-                    height: 53px;
+                    left: 20px;
+                    top: 18px;
+                    width: 88px;
+                    height: 73px;
                     /*border: none;*/
                     /*padding: 0;*/
                     /*background-color: transparent;*/
                     /*background-image: url("../vectors/header-playlist.svg");*/
-                    /*background-size: contain;*/
+                    background-size: 68px 53px;
                     /*background-repeat: no-repeat;*/
                     /*background-position: center center;*/
                     /*cursor: pointer;*/
@@ -167,10 +167,10 @@
 
                 .header__burger {
                     /*position: absolute;*/
-                    right: 18px;
-                    top: 24px;
-                    width: 50px;
-                    height: 50px;
+                    right: 8px;
+                    top: 14px;
+                    width: 70px;
+                    height: 70px;
                     /*border: none;*/
                     /*padding: 0;*/
                     /*background-color: transparent;*/
