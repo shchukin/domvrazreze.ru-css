@@ -44,7 +44,7 @@
 
         <!-- assets -->
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="../styles/style.css?1717773304">
+        <link rel="stylesheet" href="../styles/style.css?1717999362">
 
     </head>
     <body>
@@ -56,10 +56,65 @@
         <![endif]-->
 
         <header class="header">
-            <div class="header__inner">
-                Header
+            <div class="header__detachable-panel">
+                <div class="header__wrap container">
+                    <button class="header__player-toggle" type="button">
+                        Показать плейлист
+                    </button>
+                    <div class="header__marquee">
+                        <div class="marquee" id="marquee">
+                            <div class="marquee__progress">
+                                <div class="play-progress" id="global-progress-bar" onclick="seekTrack(event, currentTrackIndex)">
+                                    <div class="play-progress__value" id="global-progress-bar-inner"></div>
+                                </div>
+                            </div>
+                            <div class="marquee__body">
+                                <button class="marquee__toggle-playback" id="marquee-play-pause" onclick="playPause()">
+
+                                </button>
+                                <div class="marquee__title" id="current-track">Выберите трек</div>
+                                <button class="marquee__close" onclick="toggleMarquee()">Закрыть</button>
+                            </div>
+                        </div>
+                    </div>
+                    <a class="header__logo" href="home.html">Дом в разрезе</a>
+                </div>
             </div>
         </header>
+
+        <div class="playlist">
+            <div class="playlist__wrap container">
+                <div class="playlist__body">
+                    <h2 class="playlist__heading">
+                        Плейлист
+                    </h2>
+                    <button class="playlist__close" type="button">
+                        Закрыть плейлист
+                    </button>
+                    <div class="playlist__list">
+
+                        <!-- Main Audio Player -->
+                        <div id="main-player" class="audio-player">
+                            <div id="playlist">
+                                <!-- Playlist will be populated here -->
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <!-- Additional Audio Instances -->
+        <div id="audio-instances">
+            <!-- Instances will be created here -->
+        </div>
+
+
+
+
 
         <div class="collage">
             <video class="collage__video collage__video--1" src="../videos/collage-01.mp4" preload="auto" muted></video>
@@ -119,8 +174,8 @@
                              height="431"
                              alt=""
                         >
-                        <div class="fragment__player">
-                            TO DO: Player
+                        <div class="fragment__player" data-audio="1">
+
                         </div>
                     </div>
                 </div>
@@ -146,8 +201,8 @@
                              height="359"
                              alt=""
                         >
-                        <div class="fragment__player">
-                            TO DO: Player
+                        <div class="fragment__player" data-audio="2">
+
                         </div>
                     </div>
                 </div>
@@ -173,8 +228,8 @@
                              height="385"
                              alt=""
                         >
-                        <div class="fragment__player">
-                            TO DO: Player
+                        <div class="fragment__player" data-audio="3">
+
                         </div>
                     </div>
                 </div>
@@ -200,8 +255,8 @@
                              height="456"
                              alt=""
                         >
-                        <div class="fragment__player">
-                            TO DO: Player
+                        <div class="fragment__player" data-audio="4">
+
                         </div>
                     </div>
                 </div>
@@ -228,8 +283,8 @@
                              height="498"
                              alt=""
                         >
-                        <div class="fragment__player">
-                            TO DO: Player
+                        <div class="fragment__player" data-audio="5">
+
                         </div>
                     </div>
                 </div>
@@ -255,8 +310,8 @@
                              height="292"
                              alt=""
                         >
-                        <div class="fragment__player">
-                            TO DO: Player
+                        <div class="fragment__player" data-audio="6">
+
                         </div>
                     </div>
                 </div>
@@ -282,8 +337,8 @@
                              height="397"
                              alt=""
                         >
-                        <div class="fragment__player">
-                            TO DO: Player
+                        <div class="fragment__player" data-audio="7">
+
                         </div>
                     </div>
                 </div>
@@ -309,8 +364,8 @@
                              height="387"
                              alt=""
                         >
-                        <div class="fragment__player">
-                            TO DO: Player
+                        <div class="fragment__player" data-audio="8">
+
                         </div>
                     </div>
                 </div>
@@ -336,8 +391,8 @@
                              height="412"
                              alt=""
                         >
-                        <div class="fragment__player">
-                            TO DO: Player
+                        <div class="fragment__player" data-audio="9">
+
                         </div>
                     </div>
                 </div>
@@ -411,10 +466,13 @@
 
         <script src="../vendors/jquery/jquery-3.7.1.min.js"></script>
         <script src="../vendors/magnific-popup/jquery.magnific-popup.min.js"></script>
-        <script src="../scripts/_mfp.js?1717773304"></script>
-        <script src="../scripts/_input.js?1717773304"></script>
-        <script src="../scripts/_collage.js?1717773304"></script>
-        <script src="../scripts/_mobile-collage.js?1717773304"></script>
+        <script src="../vendors/howler/howler.min.js"></script>
+        <script src="../scripts/_mfp.js?1717999362"></script>
+        <script src="../scripts/_input.js?1717999362"></script>
+        <script src="../scripts/_collage.js?1717999362"></script>
+        <script src="../scripts/_mobile-collage.js?1717999362"></script>
+        <script src="../scripts/_playback.js?1717999362"></script>
+        <script src="../scripts/_header.js?1717999362"></script>
 
     </body>
 </html>
