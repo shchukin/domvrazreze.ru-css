@@ -245,7 +245,7 @@ tracks.forEach((track, index) => {
     const trackElement = document.createElement('div');
     trackElement.className = 'playlist-track';
     trackElement.innerHTML = `
-        <div class="track">
+        <div class="track track--playlist">
             <div class="track__progress">
                 <div class="play-progress" id="play-progress-${index}" onclick="seekTrack(event, ${index})">
                     <div class="play-progress__value"></div>
@@ -273,12 +273,22 @@ fragmentPlayers.forEach(fragmentPlayer => {
         const instanceDiv = document.createElement('div');
         instanceDiv.className = 'audio-player';
         instanceDiv.innerHTML = `
-            <div class="instance">
-                <button class="play-pause-btn" onclick="playTrack(${audioIndex})">${playIcon}</button>
-                <span>${track.title}</span>
-                <div class="play-progress" id="play-progress-${audioIndex}" onclick="seekTrack(event, ${audioIndex})">
-                    <div class="play-progress__value"></div>
+            <div class="track track--instance">
+                <div class="track__progress">
+                    <div class="play-progress" id="play-progress-${audioIndex}" onclick="seekTrack(event, ${audioIndex})">
+                        <div class="play-progress__value"></div>
+                    </div>
                 </div>
+                <div class="track__body">
+                    <div class="track__title">
+                        ${track.title}
+                    </div>
+                    <div class="track__toggle-playback">
+                        <button class="play-pause-btn" onclick="playTrack(${audioIndex})">${playIcon}</button>
+                    </div>
+                </div>
+                
+            </div>
         `;
         instanceDiv.style.backgroundColor = track.backgroundColor;
         instanceDiv.style.color = track.textColor;

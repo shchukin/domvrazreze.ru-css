@@ -1,9 +1,9 @@
-.track {
+.track--playlist {
     position: relative;
     padding-top: 10px;
     padding-bottom: 10px;
 }
-    .track__progress {
+    .track--playlist .track__progress {
         position: absolute;
         left: 0;
         top: 0;
@@ -12,23 +12,23 @@
         display: none;
     }
 
-    .current-track .track__progress {
+    .current-track .track--playlist .track__progress {
         display: block;
     }
-        .track__progress .play-progress {
+        .track--playlist .track__progress .play-progress {
             background-color: rgb(0 0 0 / 5%);
         }
-            .track__progress .play-progress__value {
+            .track--playlist .track__progress .play-progress__value {
                 background-color: rgb(0 0 0 / 5%);
             }
 
-    .track__body {
+    .track--playlist .track__body {
         pointer-events: none;
         position: relative;
         padding-left: 24px;
         padding-right: 60px;
     }
-        .track__title {
+        .track--playlist .track__title {
             display: flex;
             align-items: center;
             min-height: 40px;
@@ -36,7 +36,7 @@
             line-height: 20px;
         }
 
-        .track__toggle-playback {
+        .track--playlist .track__toggle-playback {
             pointer-events: auto;
             position: absolute;
             right: 16px;
@@ -44,5 +44,53 @@
             bottom: 0;
             display: flex;
             align-items: center;
+        }
+
+.track {
+    /*position: relative;*/
+    /*padding-top: 10px;*/
+    /*padding-bottom: 10px;*/
+}
+    .track__progress {
+        /*position: absolute;*/
+        /*left: 0;*/
+        /*top: 0;*/
+        /*right: 0;*/
+        /*bottom: 0;*/
+        /*display: none;*/
+    }
+
+    .current-track .track__progress {
+        /*display: block;*/
+    }
+        .track__progress .play-progress {
+            /*background-color: rgb(0 0 0 / 5%);*/
+        }
+            .track__progress .play-progress__value {
+                /*background-color: rgb(0 0 0 / 5%);*/
+            }
+
+    .track__body {
+        /*pointer-events: none;*/
+        /*position: relative;*/
+        /*padding-left: 24px;*/
+        /*padding-right: 60px;*/
+    }
+        .track__title {
+            /*display: flex;*/
+            /*align-items: center;*/
+            /*min-height: 40px;*/
+            /*font-size: 16px;*/
+            /*line-height: 20px;*/
+        }
+
+        .track__toggle-playback {
+            /*pointer-events: auto;*/
+            /*position: absolute;*/
+            /*right: 16px;*/
+            /*top: 0;*/
+            /*bottom: 0;*/
+            /*display: flex;*/
+            /*align-items: center;*/
         }
 
