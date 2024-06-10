@@ -217,10 +217,15 @@
                 }
 
                 .header__marquee {
-                    /*position: absolute;*/
-                    /*top: 61px;*/
-                    /*left: 152px;*/
-                    /*width: 400px;*/
+                    position: absolute;
+                    top: 100%;
+                    left: calc(-1 * var(--container-padding));
+                    width: calc(100% + 2 * var(--container-padding));
+                    background-color: rgb(96 94 125 / 80%);
+                }
+
+                .playlist-expanded .header__marquee {
+                    display: none; /* неудачно накладывается один крестик на другой */
                 }
 
                 .header__logo {
