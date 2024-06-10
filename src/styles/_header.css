@@ -16,11 +16,12 @@
     }
         .header__wrap {
             position: relative;
+            height: 100%;
         }
             .header__player-toggle {
                 position: absolute;
                 left: 46px;
-                top: 22px;
+                top: 36px;
                 width: 86px;
                 height: 68px;
                 border: none;
@@ -42,15 +43,18 @@
 
             .header__marquee {
                 position: absolute;
-                top: 47px;
+                top: 61px;
                 left: 152px;
                 width: 400px;
             }
 
             .header__logo {
+                position: absolute;
+                left: 0;
+                right: 0;
+                top: 14px;
                 margin-left: auto;
                 margin-right: auto;
-                margin-top: 14px;
                 display: block;
                 width: 104px;
                 height: 101px;
@@ -76,6 +80,7 @@
         height: 128px;
     }
         .header__detachable-panel {
+            position: fixed;
             top: 10px;
             height: var(--header-height);
             background-image: url("../vectors/header-mobile.svg");
@@ -87,7 +92,7 @@
                 .header__player-toggle {
                     /*position: absolute;*/
                     left: 30px;
-                    top: 14px;
+                    top: 28px;
                     width: 68px;
                     height: 53px;
                     /*border: none;*/
@@ -109,7 +114,7 @@
 
                 .header__marquee {
                     /*position: absolute;*/
-                    top: 31px;
+                    top: 45px;
                     left: 120px;
                     width: 300px;
                 }
@@ -117,8 +122,8 @@
                 .header__logo {
                     /*margin-left: auto;*/
                     /*margin-right: auto;*/
-                    margin-top: 10px;
                     /*display: block;*/
+                    top: 10px;
                     width: 81px;
                     height: 80px;
                     /*background-image: url("../images/footer-logo.png");*/
@@ -139,7 +144,7 @@
         /*height: 128px;*/
     }
         .header__detachable-panel {
-            position: relative;
+            position: absolute;
             /*top: 10px;*/
             /*height: var(--header-height);*/
             /*background-image: url("../vectors/header-mobile.svg");*/
