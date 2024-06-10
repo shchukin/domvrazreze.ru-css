@@ -15,10 +15,10 @@
     .current-track .track--playlist .track__progress {
         display: block;
     }
-        .track--playlist .track__progress .play-progress {
+        .track--playlist .play-progress {
             background-color: rgb(0 0 0 / 5%);
         }
-            .track--playlist .track__progress .play-progress__value {
+            .track--playlist .play-progress__value {
                 background-color: rgb(0 0 0 / 5%);
             }
 
@@ -46,51 +46,60 @@
             align-items: center;
         }
 
-.track {
-    /*position: relative;*/
-    /*padding-top: 10px;*/
-    /*padding-bottom: 10px;*/
+
+
+
+.track--instance {
+    position: relative;
+    padding-top: 22px;
+    padding-bottom: 23px;
 }
-    .track__progress {
-        /*position: absolute;*/
-        /*left: 0;*/
-        /*top: 0;*/
-        /*right: 0;*/
-        /*bottom: 0;*/
+    .track--instance .track__progress {
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
         /*display: none;*/
     }
 
-    .current-track .track__progress {
-        /*display: block;*/
+    .current-track .track--instance .track__progress {
+        display: block;
     }
-        .track__progress .play-progress {
-            /*background-color: rgb(0 0 0 / 5%);*/
+        .track--instance .play-progress {
+            /*background-color: rgb(0 0 0 / 15%);*/
         }
-            .track__progress .play-progress__value {
-                /*background-color: rgb(0 0 0 / 5%);*/
+            .track--instance .play-progress__value {
+                background-color: rgb(255 255 255 / 15%);
             }
 
-    .track__body {
-        /*pointer-events: none;*/
-        /*position: relative;*/
-        /*padding-left: 24px;*/
-        /*padding-right: 60px;*/
+    .track--instance .track__body {
+        pointer-events: none;
+        position: relative;
+        padding-left: 20px;
+        padding-right: 60px;
     }
-        .track__title {
-            /*display: flex;*/
-            /*align-items: center;*/
-            /*min-height: 40px;*/
-            /*font-size: 16px;*/
-            /*line-height: 20px;*/
+        .track--instance .track__title {
+            display: flex;
+            align-items: center;
+            min-height: 40px;
+            font-size: 16px;
+            line-height: 20px;
         }
 
-        .track__toggle-playback {
-            /*pointer-events: auto;*/
-            /*position: absolute;*/
-            /*right: 16px;*/
-            /*top: 0;*/
-            /*bottom: 0;*/
-            /*display: flex;*/
-            /*align-items: center;*/
+        .track--instance .track__toggle-playback {
+            pointer-events: auto;
+            position: absolute;
+            right: 16px;
+            top: 0;
+            bottom: 0;
+            display: flex;
+            align-items: center;
         }
+            .track--instance .play-pause-btn {
+                color: inherit;
+            }
 
+                .track--instance .play-pause-btn svg {
+                    fill: currentColor;
+                }
