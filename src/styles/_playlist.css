@@ -5,7 +5,13 @@
     right: 0;
     top: 163px;
     pointer-events: none;
+    display: none;
 }
+
+.playlist-expanded .playlist {
+    display: block;
+}
+
     .playlist__wrap {
         padding-left: 14px;
     }

@@ -11,5 +11,6 @@
     opacity: 70%;
 }
     .play-pause-btn svg {
+        pointer-events: none; /* По какой-то причине клик в svg-ешку закрывает выпадайку. Срабатывает скрипт: if (!$(event.target).closest('.playlist__body, .header__player-toggle').length) { ...*/
         fill: #000000;
     }
