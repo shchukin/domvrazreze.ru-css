@@ -11,7 +11,7 @@
     });
 
     $(document).on('click', function(event) {
-        if (!$(event.target).closest('.playlist__body, .header__player-toggle').length) {
+        if (!$(event.target).closest('.playlist__body, .header__player-toggle, .header__marquee').length) {
             $html.removeClass('playlist-expanded');
         }
     });
