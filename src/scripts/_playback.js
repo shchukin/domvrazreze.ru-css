@@ -1,13 +1,58 @@
 const tracks = [
-    { title: "Иоган Себастьян Бах. Концерт для клавира с оркестром", src: "../audio/track01.mp3" },
-    { title: "Иоган Себастьян Бах. Хроматическая фантазия и фуга ре минор", src: "../audio/track02.mp3" },
-    { title: "Фредерик Шопен. Ноктюрн №1", src: "../audio/track03.mp3" },
-    { title: "Иоган Себастьян Бах. Концерт для клавира с оркестром", src: "../audio/track04.mp3" },
-    { title: "Иоган Себастьян Бах. Хроматическая фантазия и фуга ре минор", src: "../audio/track05.mp3" },
-    { title: "Фредерик Шопен. Ноктюрн №1", src: "../audio/track06.mp3" },
-    { title: "Иоган Себастьян Бах. Концерт для клавира с оркестром", src: "../audio/track07.mp3" },
-    { title: "Иоган Себастьян Бах. Хроматическая фантазия и фуга ре минор", src: "../audio/track08.mp3" },
-    { title: "Фредерик Шопен. Ноктюрн №1", src: "../audio/track09.mp3" },
+    {
+        title: "Иоган Себастьян Бах. Концерт для клавира с оркестром",
+        src: "../audio/track01.mp3",
+        backgroundColor: "#BFBBAD",
+        textColor: "#000000"
+    },
+    {
+        title: "Иоган Себастьян Бах. Хроматическая фантазия и фуга ре минор",
+        src: "../audio/track02.mp3",
+        backgroundColor: "#253657",
+        textColor: "#FFFFFF"
+    },
+    {
+        title: "Фредерик Шопен. Ноктюрн №1",
+        src: "../audio/track03.mp3",
+        backgroundColor: "#C54F35",
+        textColor: "#FFFFFF"
+    },
+    {
+        title: "Иоган Себастьян Бах. Концерт для клавира с оркестром",
+        src: "../audio/track04.mp3",
+        backgroundColor: "#D29A16",
+        textColor: "#FFFFFF"
+    },
+    {
+        title: "Иоган Себастьян Бах. Хроматическая фантазия и фуга ре минор",
+        src: "../audio/track05.mp3",
+        backgroundColor: "#A0883B",
+        textColor: "#FFFFFF"
+    },
+    {
+        title: "Фредерик Шопен. Ноктюрн №1",
+        src: "../audio/track06.mp3",
+        backgroundColor: "#B84934",
+        textColor: "#FFFFFF"
+    },
+    {
+        title: "Иоган Себастьян Бах. Концерт для клавира с оркестром",
+        src: "../audio/track07.mp3",
+        backgroundColor: "#1F416A",
+        textColor: "#FFFFFF"
+    },
+    {
+        title: "Иоган Себастьян Бах. Хроматическая фантазия и фуга ре минор",
+        src: "../audio/track08.mp3",
+        backgroundColor: "#3F6171",
+        textColor: "#FFFFFF"
+    },
+    {
+        title: "Фредерик Шопен. Ноктюрн №1",
+        src: "../audio/track09.mp3",
+        backgroundColor: "#7888A2",
+        textColor: "#FFFFFF"
+    },
 ];
 
 let currentTrackIndex = 0;
@@ -228,12 +273,15 @@ fragmentPlayers.forEach(fragmentPlayer => {
         const instanceDiv = document.createElement('div');
         instanceDiv.className = 'audio-player';
         instanceDiv.innerHTML = `
-            <button class="play-pause-btn" onclick="playTrack(${audioIndex})">${playIcon}</button>
-            <span>${track.title}</span>
-            <div class="play-progress" id="play-progress-${audioIndex}" onclick="seekTrack(event, ${audioIndex})">
-                <div class="play-progress__value"></div>
-            </div>
+            <div class="instance">
+                <button class="play-pause-btn" onclick="playTrack(${audioIndex})">${playIcon}</button>
+                <span>${track.title}</span>
+                <div class="play-progress" id="play-progress-${audioIndex}" onclick="seekTrack(event, ${audioIndex})">
+                    <div class="play-progress__value"></div>
+                </div>
         `;
+        instanceDiv.style.backgroundColor = track.backgroundColor;
+        instanceDiv.style.color = track.textColor;
         fragmentPlayer.appendChild(instanceDiv);
     }
 });
