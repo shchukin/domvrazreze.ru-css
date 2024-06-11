@@ -9,6 +9,8 @@ document.addEventListener("DOMContentLoaded", function() {
     let verticalScrollCut = 0;
     let horizontalScrollCut = 0;
     let normalizedVerticalScroll = 0;
+    let lastKnownScrollPosition = 0;
+    let ticking = false;
 
     function init() {
         const collageHeight = collage.clientHeight;
@@ -16,10 +18,19 @@ document.addEventListener("DOMContentLoaded", function() {
         horizontalScrollCut = collageRibbon.clientWidth - collage.clientWidth; /* Правая точка по горизонтали */
     }
 
-    function onScroll() {
-        const scrolled = window.scrollY;
-        normalizedVerticalScroll = Math.min(1, scrolled / verticalScrollCut); /* Значение от 0 до 1, насколько по вертикали прокрутили нужную область. 1 -- конец области */
+    function updateScroll() {
+        normalizedVerticalScroll = Math.min(1, lastKnownScrollPosition / verticalScrollCut); /* Значение от 0 до 1, насколько по вертикали прокрутили нужную область. 1 -- конец области */
         collageRibbon.style.transform = `translate3d(${-1 * normalizedVerticalScroll * horizontalScrollCut}px, 0, 0)`;
+        ticking = false;
+    }
+
+    function onScroll() {
+        lastKnownScrollPosition = window.scrollY;
+
+        if (!ticking) {
+            window.requestAnimationFrame(updateScroll);
+            ticking = true;
+        }
     }
 
     /* Ensure init is called after styles are fully loaded */
