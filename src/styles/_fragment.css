@@ -107,7 +107,7 @@
         display: block;
         width: 302px;
         height: 292px;
-        background-image: url("../images/fragments-tajny-bottom@1x.jpg");
+        background-image: url("../images/fragments/fragments-tajny-bottom@1x.jpg");
         background-size: contain;
         background-repeat: no-repeat;
         background-position: center center;
@@ -115,7 +115,7 @@
 
     @media (min-resolution: 1.5dppx) {
         .fragment--tajny .fragment__content::after {
-            background-image: url("../images/fragments-tajny-bottom@2x.jpg");
+            background-image: url("../images/fragments/fragments-tajny-bottom@2x.jpg");
         }
     }
 
@@ -137,7 +137,7 @@
         display: block;
         width: 118px;
         height: 147px;
-        background-image: url("../images/fragment-zhiteli-right.svg");
+        background-image: url("../images/fragments/fragment-zhiteli-right.svg");
         background-size: contain;
         background-repeat: no-repeat;
         background-position: center center;
@@ -152,7 +152,7 @@
         display: block;
         width: 86px;
         height: 110px;
-        background-image: url("../images/fragment-zhiteli-bottom.svg");
+        background-image: url("../images/fragments/fragment-zhiteli-bottom.svg");
         background-size: contain;
         background-repeat: no-repeat;
         background-position: center center;
@@ -176,7 +176,7 @@
         display: block;
         width: 135px;
         height: 243px;
-        background-image: url("../images/fragment-progulki-po-leningradu-left.svg");
+        background-image: url("../images/fragments/fragment-progulki-po-leningradu-left.svg");
         background-size: contain;
         background-repeat: no-repeat;
         background-position: center center;
@@ -191,7 +191,7 @@
         display: block;
         width: 220px;
         height: 149px;
-        background-image: url("../images/fragment-progulki-po-leningradu-bottom.svg");
+        background-image: url("../images/fragments/fragment-progulki-po-leningradu-bottom.svg");
         background-size: contain;
         background-repeat: no-repeat;
         background-position: center center;
@@ -214,7 +214,7 @@
         display: block;
         width: 248px;
         height: 379px;
-        background-image: url("../images/fragment-hudozhniki-bottom@1x.jpg");
+        background-image: url("../images/fragments/fragment-hudozhniki-bottom@1x.jpg");
         background-size: contain;
         background-repeat: no-repeat;
         background-position: center center;
@@ -222,7 +222,7 @@
 
     @media (min-resolution: 1.5dppx) {
         .fragment--hudozhniki .fragment__content::after {
-            background-image: url("../images/fragment-hudozhniki-bottom@2x.jpg");
+            background-image: url("../images/fragments/fragment-hudozhniki-bottom@2x.jpg");
         }
     }
 
@@ -242,7 +242,7 @@
         display: block;
         width: 107px;
         height: 110px;
-        background-image: url("../images/fragment-pojety-left.svg");
+        background-image: url("../images/fragments/fragment-pojety-left.svg");
         background-size: contain;
         background-repeat: no-repeat;
         background-position: center center;
@@ -257,7 +257,7 @@
         display: block;
         width: 146px;
         height: 129px;
-        background-image: url("../images/fragment-pojety-bottom@1x.jpg");
+        background-image: url("../images/fragments/fragment-pojety-bottom@1x.jpg");
         background-size: contain;
         background-repeat: no-repeat;
         background-position: center center;
@@ -265,7 +265,7 @@
 
     @media (min-resolution: 1.5dppx) {
         .fragment--pojety .fragment__content::after {
-            background-image: url("../images/fragment-pojety-bottom@2x.jpg");
+            background-image: url("../images/fragments/fragment-pojety-bottom@2x.jpg");
         }
     }
 
@@ -287,7 +287,7 @@
         display: block;
         width: 296px;
         height: 302px;
-        background-image: url("../images/fragment-muzyka-bottom@1x.jpg");
+        background-image: url("../images/fragments/fragment-muzyka-bottom@1x.jpg");
         background-size: contain;
         background-repeat: no-repeat;
         background-position: center center;
@@ -295,7 +295,7 @@
 
     @media (min-resolution: 1.5dppx) {
         .fragment--muzyka .fragment__content::after {
-            background-image: url("../images/fragment-muzyka-bottom@2x.jpg");
+            background-image: url("../images/fragments/fragment-muzyka-bottom@2x.jpg");
         }
     }
 
@@ -328,7 +328,7 @@
         display: block;
         width: 209px;
         height: 172px;
-        background-image: url("../images/fragment-1931-god-left.svg");
+        background-image: url("../images/fragments/fragment-1931-god-left.svg");
         background-size: contain;
         background-repeat: no-repeat;
         background-position: center center;
@@ -343,7 +343,7 @@
         display: block;
         width: 193px;
         height: 186px;
-        background-image: url("../images/fragment-1931-god-right@1x.jpg");
+        background-image: url("../images/fragments/fragment-1931-god-right@1x.jpg");
         background-size: contain;
         background-repeat: no-repeat;
         background-position: center center;
@@ -352,7 +352,7 @@
     @media (min-resolution: 1.5dppx) {
 
         .fragment--1931-god .fragment__wrap::after {
-            background-image: url("../images/fragment-1931-god-right@2x.jpg");
+            background-image: url("../images/fragments/fragment-1931-god-right@2x.jpg");
         }
     }
 
@@ -374,7 +374,7 @@
         display: block;
         width: 129px;
         height: 157px;
-        background-image: url("../images/fragment-posvjashhenija-right.svg");
+        background-image: url("../images/fragments/fragment-posvjashhenija-right.svg");
         background-size: contain;
         background-repeat: no-repeat;
         background-position: center center;
