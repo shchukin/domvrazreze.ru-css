@@ -184,6 +184,16 @@ function highlightCurrentTrack() {
             track.classList.remove('current-track');
         }
     });
+
+    const instanceTracks = document.querySelectorAll('.fragment__player .audio-player');
+    instanceTracks.forEach((track) => {
+        const audioIndex = parseInt(track.closest('.fragment__player').getAttribute('data-audio'), 10) - 1;
+        if (audioIndex === currentTrackIndex) {
+            track.classList.add('current-track');
+        } else {
+            track.classList.remove('current-track');
+        }
+    });
 }
 
 // Function to reset to pristine state
@@ -207,6 +217,11 @@ function clearCurrentTrackHighlight() {
     playlistTracks.forEach(track => {
         track.classList.remove('current-track');
     });
+
+    const instanceTracks = document.querySelectorAll('.fragment__player .audio-player');
+    instanceTracks.forEach(track => {
+        track.classList.remove('current-track');
+    });
 }
 
 // Function to update play/pause buttons
@@ -217,8 +232,10 @@ function updatePlayPauseButtons() {
     });
 
     const instanceButtons = document.querySelectorAll('.fragment__player .play-pause-btn');
-    instanceButtons.forEach((button, index) => {
-        button.innerHTML = (index === currentTrackIndex && isPlaying) ? pauseIcon : playIcon;
+    instanceButtons.forEach((button) => {
+        const parentDiv = button.closest('.fragment__player');
+        const audioIndex = parseInt(parentDiv.getAttribute('data-audio'), 10) - 1;
+        button.innerHTML = (audioIndex === currentTrackIndex && isPlaying) ? pauseIcon : playIcon;
     });
 
     const marqueeButton = document.getElementById('marquee-play-pause');
