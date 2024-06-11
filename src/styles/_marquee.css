@@ -76,6 +76,10 @@
             pointer-events: auto;
         }
 
+        .marquee__close:hover {
+            opacity: 80%;
+        }
+
 
 
 @media (width < 1500px) {
