@@ -15,7 +15,7 @@
 
 @media (740px <= width) {
 
-    .playlist-expanded:not(.menu-expanded) .playlist  {
+    .playlist-expanded:not(.menu-expanded) .playlist {
         animation: slide-down 1000ms var(--ease-out-quint);
     }
 }
