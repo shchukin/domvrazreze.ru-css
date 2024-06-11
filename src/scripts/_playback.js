@@ -66,25 +66,32 @@ const pauseIcon = `<svg width="20" height="20" viewBox="0 0 20 20" xmlns="http:/
     <path d="M7.588 1.5H2.912a.4.4 0 0 0-.4.412l.477 16.2a.4.4 0 0 0 .4.388h3.723a.4.4 0 0 0 .4-.388l.476-16.2a.4.4 0 0 0-.4-.412ZM12.412 18.5h4.676a.4.4 0 0 0 .4-.412l-.477-16.2a.4.4 0 0 0-.4-.388h-3.723a.4.4 0 0 0-.4.388l-.476 16.2a.4.4 0 0 0 .4.412Z"/>
 </svg>`;
 
-// Initialize Howl instances
-const sounds = tracks.map((track, index) => {
-    const sound = new Howl({
-        src: [track.src],
-        onend: () => {
-            if (currentTrackIndex < tracks.length - 1) {
-                playTrack(currentTrackIndex + 1);
-            } else {
-                resetToPristineState();
+let sounds = [];
+
+// Preload the first track on page load
+function preloadTrack(index) {
+    if (!sounds[index]) {
+        sounds[index] = new Howl({
+            src: [tracks[index].src],
+            onend: () => {
+                if (currentTrackIndex < tracks.length - 1) {
+                    playTrack(currentTrackIndex + 1);
+                } else {
+                    resetToPristineState();
+                }
             }
-        }
-    });
-    return sound;
-});
+        });
+    }
+}
+
+// Preload the first track
+preloadTrack(0);
 
 // Function to play a specific track
 function playTrack(index) {
     if (index !== currentTrackIndex) {
         sounds[currentTrackIndex].stop();
+        preloadTrack(index);
         currentTrackIndex = index;
         sounds[currentTrackIndex].play();
         isPlaying = true;
@@ -95,6 +102,10 @@ function playTrack(index) {
     highlightCurrentTrack();
     updatePlayPauseButtons();
     showMarqueeIfHidden();
+    // Preload the next track
+    if (currentTrackIndex < tracks.length - 1) {
+        preloadTrack(currentTrackIndex + 1);
+    }
 }
 
 // Function to play or pause the current track
@@ -142,7 +153,7 @@ function showMarqueeIfHidden() {
 function updateProgressBar(index) {
     const progressBars = document.querySelectorAll(`#play-progress-${index} .play-progress__value`);
     const globalProgressBar = document.getElementById('global-progress-bar-inner');
-    if (sounds[index].playing() || sounds[index].state() === 'loaded') {
+    if (sounds[index] && (sounds[index].playing() || sounds[index].state() === 'loaded')) {
         const seek = sounds[index].seek() || 0;
         const progress = (seek / sounds[index].duration()) * 100;
         progressBars.forEach(progressBar => {
@@ -214,6 +225,7 @@ function seekTrack(event, index) {
 
     if (index !== currentTrackIndex) {
         sounds[currentTrackIndex].stop();
+        preloadTrack(index);
         currentTrackIndex = index;
         sounds[currentTrackIndex].seek(seekTime);
         sounds[currentTrackIndex].play();
@@ -229,6 +241,10 @@ function seekTrack(event, index) {
     highlightCurrentTrack();
     updatePlayPauseButtons();
     showMarqueeIfHidden();
+    // Preload the next track
+    if (currentTrackIndex < tracks.length - 1) {
+        preloadTrack(currentTrackIndex + 1);
+    }
 }
 
 // Update progress bars periodically
