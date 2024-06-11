@@ -328,7 +328,7 @@
         display: block;
         width: 209px;
         height: 172px;
-        background-image: url("../images/1931-god-left.svg");
+        background-image: url("../images/fragment-1931-god-left.svg");
         background-size: contain;
         background-repeat: no-repeat;
         background-position: center center;
@@ -343,7 +343,7 @@
         display: block;
         width: 193px;
         height: 186px;
-        background-image: url("../images/1931-god-right@1x.jpg");
+        background-image: url("../images/fragment-1931-god-right@1x.jpg");
         background-size: contain;
         background-repeat: no-repeat;
         background-position: center center;
@@ -352,7 +352,7 @@
     @media (min-resolution: 1.5dppx) {
 
         .fragment--1931-god .fragment__wrap::after {
-            background-image: url("../images/1931-god-right@2x.jpg");
+            background-image: url("../images/fragment-1931-god-right@2x.jpg");
         }
     }
 
