@@ -30,15 +30,12 @@
         $html.toggleClass('menu-expanded');
     });
 
-    // $('.playlist__close').on('click', function() {
-    //     $html.removeClass('menu-expanded');
-    // });
 
-    // $(document).on('click', function(event) {
-    //     if (!$(event.target).closest('.playlist__body, .header__player-toggle').length) {
-    //         $html.removeClass('menu-expanded');
-    //     }
-    // });
+    $(document).on('click', function(event) {
+        if (!$(event.target).closest('.menu__body, .header__burger').length) {
+            $html.removeClass('menu-expanded');
+        }
+    });
 
     $(document).on('keyup', function(event) {
         if (event.keyCode === 27) {

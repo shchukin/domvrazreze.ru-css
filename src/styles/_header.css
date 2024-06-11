@@ -41,11 +41,6 @@
                 opacity: 80%;
             }
 
-            .playlist-expanded:not(.menu-expanded) .header__player-toggle {
-                background-image: url("../vectors/burger-close.svg");
-                background-size: 60px 60px;
-            }
-
             .header__marquee {
                 position: absolute;
                 top: 61px;
@@ -141,10 +136,6 @@
                     /*opacity: 80%;*/
                 }
 
-                .playlist-expanded:not(.menu-expanded) .header__player-toggle {
-                    background-size: 50px 50px;
-                }
-
                 .header__marquee {
                     /*position: absolute;*/
                     top: 45px;
@@ -223,11 +214,6 @@
 
                 .header__player-toggle:hover {
                     /*opacity: 80%;*/
-                }
-
-
-                .playlist-expanded:not(.menu-expanded) .header__player-toggle {
-                    background-size: 44px 44px;
                 }
 
                 .header__marquee {
