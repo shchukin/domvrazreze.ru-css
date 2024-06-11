@@ -55,7 +55,24 @@
         }
 
         .marquee__close {
-            display: none;
+            position: absolute;
+            left: 100%;
+            margin-left: 13px;
+            top: -9px;
+            width: 40px;
+            height: 40px;
+            background-color: transparent;
+            background-image: url("../vectors/white-cross.svg");
+            background-size: 14px 14px;
+            background-repeat: no-repeat;
+            background-position: center center;
+            display: block;
+            border: none;
+            padding: 0;
+            text-indent: 200%;
+            white-space: nowrap;
+            overflow: hidden;
+            cursor: pointer;
             pointer-events: auto;
         }
 
@@ -188,23 +205,9 @@
             }
 
             .marquee__close {
-                position: absolute;
+                left: auto;
                 right: calc(var(--container-padding) - 12px);
                 top: -7px;
-                width: 40px;
-                height: 40px;
-                background-color: transparent;
-                background-image: url("../vectors/white-cross.svg");
-                background-size: 14px 14px;
-                background-repeat: no-repeat;
-                background-position: center center;
-                display: block;
-                border: none;
-                padding: 0;
-                text-indent: 200%;
-                white-space: nowrap;
-                overflow: hidden;
-                cursor: pointer;
             }
 }
 

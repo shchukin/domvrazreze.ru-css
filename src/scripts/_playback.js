@@ -73,6 +73,14 @@ function preloadTrack(index) {
     if (!sounds[index]) {
         sounds[index] = new Howl({
             src: [tracks[index].src],
+            html5: true,
+            preload: false,
+            onload: () => {
+                console.log(`Track ${index + 1} loaded`);
+            },
+            onplay: () => {
+                sounds[index].preload = 'metadata';
+            },
             onend: () => {
                 if (currentTrackIndex < tracks.length - 1) {
                     playTrack(currentTrackIndex + 1);
@@ -86,6 +94,7 @@ function preloadTrack(index) {
 
 // Preload the first track
 preloadTrack(0);
+sounds[0].load();
 
 // Function to play a specific track
 function playTrack(index) {
@@ -179,7 +188,9 @@ function highlightCurrentTrack() {
 
 // Function to reset to pristine state
 function resetToPristineState() {
-    sounds[currentTrackIndex].stop();
+    if (sounds[currentTrackIndex]) {
+        sounds[currentTrackIndex].stop();
+    }
     currentTrackIndex = 0;
     isPlaying = false;
     updateMarquee();
