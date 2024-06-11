@@ -9,7 +9,7 @@
     .publications__list {
         margin-top: 50px;
         display: grid;
-        gap: 24px;
+        gap: 40px;
     }
 
     .publications__pagination {

@@ -12,6 +12,15 @@
 .menu-expanded .menu {
     display: block;
 }
+
+
+@media (740px <= width) {
+
+    .menu-expanded .menu {
+        animation: slide-down 1000ms var(--ease-out-quint);
+    }
+}
+
     .menu__wrap {
 
     }

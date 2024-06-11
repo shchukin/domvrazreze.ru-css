@@ -11,6 +11,15 @@
 .playlist-expanded:not(.menu-expanded) .playlist {
     display: block;
 }
+
+
+@media (740px <= width) {
+
+    .playlist-expanded:not(.menu-expanded) .playlist  {
+        animation: slide-down 1000ms var(--ease-out-quint);
+    }
+}
+
     .playlist__wrap {
         padding-left: 14px;
     }
