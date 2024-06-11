@@ -78,12 +78,8 @@
             .fragment__illustration {
                 width: 100%;
                 height: auto;
+                margin-bottom: 16px;
             }
-
-            .fragment__player {
-                margin-top: 16px;
-            }
-
 
 
 
@@ -471,7 +467,7 @@
                     /*height: auto;*/
                 }
 
-                .fragment__player {
+                .player-slot {
                     /*display: flex;*/
                     /*align-items: center;*/
                     /*justify-content: center;*/

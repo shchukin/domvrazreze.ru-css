@@ -6,7 +6,7 @@ const tracks = [
         textColor: '#000000'
     },
     {
-        title: 'Вольфганг Амадей Моцарт. Концерт&nbsp;№23 ля мажор для фортепиано <span class="nobr">с оркестром, ч.1.</span> Исполняет Мария Юдина (фортепиано), Большой симфонический оркестр Всесоюзного радио. Дирижёр Сергей Горчаков. 1948г.',
+        title: 'Вольфганг Амадей Моцарт. Концерт&nbsp;№23 ля мажор для фортепиано <span class="nobr">с оркестром, ч.1.</span> Исполняет Мария Юдина (фортепиано), Большой симфонический оркестр Всесоюзного радио. Дирижер Сергей Горчаков. 1948г.',
         src: '../audio/track02.mp3',
         backgroundColor: '#253657',
         textColor: '#FFFFFF'
@@ -185,9 +185,9 @@ function highlightCurrentTrack() {
         }
     });
 
-    const instanceTracks = document.querySelectorAll('.fragment__player .audio-player');
+    const instanceTracks = document.querySelectorAll('.player-slot .audio-player');
     instanceTracks.forEach((track) => {
-        const audioIndex = parseInt(track.closest('.fragment__player').getAttribute('data-audio'), 10) - 1;
+        const audioIndex = parseInt(track.closest('.player-slot').getAttribute('data-audio'), 10) - 1;
         if (audioIndex === currentTrackIndex) {
             track.classList.add('current-track');
         } else {
@@ -218,7 +218,7 @@ function clearCurrentTrackHighlight() {
         track.classList.remove('current-track');
     });
 
-    const instanceTracks = document.querySelectorAll('.fragment__player .audio-player');
+    const instanceTracks = document.querySelectorAll('.player-slot .audio-player');
     instanceTracks.forEach(track => {
         track.classList.remove('current-track');
     });
@@ -231,9 +231,9 @@ function updatePlayPauseButtons() {
         button.innerHTML = (index === currentTrackIndex && isPlaying) ? pauseIcon : playIcon;
     });
 
-    const instanceButtons = document.querySelectorAll('.fragment__player .play-pause-btn');
+    const instanceButtons = document.querySelectorAll('.player-slot .play-pause-btn');
     instanceButtons.forEach((button) => {
-        const parentDiv = button.closest('.fragment__player');
+        const parentDiv = button.closest('.player-slot');
         const audioIndex = parseInt(parentDiv.getAttribute('data-audio'), 10) - 1;
         button.innerHTML = (audioIndex === currentTrackIndex && isPlaying) ? pauseIcon : playIcon;
     });
@@ -310,10 +310,10 @@ tracks.forEach((track, index) => {
     playlistDiv.appendChild(trackElement);
 });
 
-// Create additional audio instances in fragment__player divs based on data-audio attribute
-const fragmentPlayers = document.querySelectorAll('.fragment__player');
-fragmentPlayers.forEach(fragmentPlayer => {
-    const audioIndex = parseInt(fragmentPlayer.getAttribute('data-audio'), 10) - 1;
+// Create additional audio instances in player-slot divs based on data-audio attribute
+const playerSlots = document.querySelectorAll('.player-slot');
+playerSlots.forEach(playerSlot => {
+    const audioIndex = parseInt(playerSlot.getAttribute('data-audio'), 10) - 1;
     if (audioIndex >= 0 && audioIndex < tracks.length) {
         const track = tracks[audioIndex];
         const instanceDiv = document.createElement('div');
@@ -337,7 +337,7 @@ fragmentPlayers.forEach(fragmentPlayer => {
                 </div>
             </div>
         `;
-        fragmentPlayer.appendChild(instanceDiv);
+        playerSlot.appendChild(instanceDiv);
     }
 });
 
