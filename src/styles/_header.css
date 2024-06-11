@@ -1,11 +1,11 @@
 .header {
-    height: 204px;
+    height: 170px;
 }
     .header__detachable-panel {
         position: fixed;
         z-index: 100;
         left: 0;
-        top: 34px;
+        top: 17px;
         right: 0;
         height: var(--header-height);
         background-image: url("../vectors/header.svg");
