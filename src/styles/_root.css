@@ -98,10 +98,10 @@
 @keyframes slide-down {
     from {
         opacity: 0;
-        transform: translateY(-40%);
+        transform: translateY(-20%);
     }
     to {
         opacity: 100%;
-        transform: translateY();
+        transform: translateY(0);
     }
 }
