@@ -2,35 +2,35 @@ document.addEventListener("DOMContentLoaded", function() {
 
     const collage = document.querySelector('.mobile-collage');
     const collageViewport = document.querySelector('.mobile-collage__viewport');
-
     const collageScroll = document.querySelector('.mobile-collage__scroll');
     const collageRibbon = document.querySelector('.mobile-collage__ribbon');
 
-
     /* Init */
-    const collageHeight = collage.clientHeight;
     let verticalScrollCut = 0;
     let horizontalScrollCut = 0;
     let normalizedVerticalScroll = 0;
 
     function init() {
+        const collageHeight = collage.clientHeight;
         verticalScrollCut = collageHeight - collageViewport.offsetHeight; /* Нижняя точка по вертикали */
         horizontalScrollCut = collageRibbon.clientWidth - collage.clientWidth; /* Правая точка по горизонтали */
     }
 
-    init();
+    function onScroll() {
+        const scrolled = window.scrollY;
+        normalizedVerticalScroll = Math.min(1, scrolled / verticalScrollCut); /* Значение от 0 до 1, насколько по вертикали прокрутили нужную область. 1 -- конец области */
+        collageRibbon.style.transform = `translate3d(${-1 * normalizedVerticalScroll * horizontalScrollCut}px, 0, 0)`;
+    }
+
+    /* Ensure init is called after styles are fully loaded */
+    window.addEventListener('load', init);
     window.addEventListener('resize', init);
 
-
     /* Run */
+    window.addEventListener('scroll', onScroll);
 
-    window.addEventListener('scroll', function() {
-        const scrolled = window.scrollY;
-        normalizedVerticalScroll = Math.min(1, window.scrollY / verticalScrollCut); /* Значение от 0 до 1, насколько по вертикали прокрутили нужную область. 1 -- конец области */
-        // collageScroll.scrollLeft = normalizedVerticalScroll * horizontalScrollCut
-        collageRibbon.style.transform = `translate3d(${-1 * normalizedVerticalScroll * horizontalScrollCut}px, 0, 0)`;
-    });
-
+    /* Initial call to setup scroll positions correctly */
+    init();
+    onScroll();
 
 });
-
