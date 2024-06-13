@@ -4,8 +4,15 @@
 }
 
 .wysiwyg--smaller {
-    --wysiwyg-font: var(--body-xs-font);
-    --wysiwyg-line: var(--body-xs-line);
+    --wysiwyg-font: 20px;
+    --wysiwyg-line: 28px;
+}
+
+@media (width < 1500px) {
+    .wysiwyg--smaller {
+        --wysiwyg-font: 18px;
+        --wysiwyg-line: 25px;
+    }
 }
 
 

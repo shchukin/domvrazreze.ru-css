@@ -31,6 +31,12 @@
 
 
 
+@media (width < 1860px) {
+    .welcome {
+        background-image: none;
+    }
+}
+
 @media (width < 740px) {
 
     .welcome {

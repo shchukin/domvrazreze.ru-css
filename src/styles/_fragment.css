@@ -6,7 +6,6 @@
 .fragment:last-child {
     padding-bottom: 0;
 }
-
     .fragment__wrap {
         position: relative; /* для позиционирования .fragment__wrap::after */
         display: flex;
@@ -28,6 +27,15 @@
             .fragment__description {
                 margin-top: 10px;
             }
+
+
+            @media (width < 1500px) {
+
+                .fragment__description {
+                    margin-top: 0;
+                }
+            }
+
 
             .fragment__more {
                 position: relative; /* выше некоторых иллюстраций */
@@ -83,6 +91,8 @@
 
 
 
+
+
 .fragment--tajny {
 
 }
@@ -110,8 +120,18 @@
     }
 
     @media (min-resolution: 1.5dppx) {
+
         .fragment--tajny .fragment__content::after {
             background-image: url("../images/fragments/fragments-tajny-bottom@2x.jpg");
+        }
+    }
+
+    @media (width < 1500px) {
+
+        .fragment--tajny .fragment__content::after {
+            width: 204px;
+            height: 197px;
+            left: 120px;
         }
     }
 
@@ -144,7 +164,6 @@
         position: absolute;
         right: 220px;
         top: 100%;
-        margin-top: 109px;
         display: block;
         width: 86px;
         height: 110px;
@@ -152,6 +171,14 @@
         background-size: contain;
         background-repeat: no-repeat;
         background-position: center center;
+    }
+
+    @media (width < 1500px) {
+        .fragment--zhiteli .fragment__content::after {
+            width: 49px;
+            height: 63px;
+            margin-top: -15px;
+        }
     }
 
 
@@ -193,6 +220,17 @@
         background-position: center center;
     }
 
+    @media (width < 1500px) {
+
+        .fragment--progulki-po-leningradu .fragment__content::after {
+            width: 184px;
+            height: 125px;
+            left: 98px;
+            margin-top: 70px;
+        }
+    }
+
+
 
 .fragment--hudozhniki {
 
@@ -219,6 +257,15 @@
     @media (min-resolution: 1.5dppx) {
         .fragment--hudozhniki .fragment__content::after {
             background-image: url("../images/fragments/fragment-hudozhniki-bottom@2x.jpg");
+        }
+    }
+
+    @media (width < 1500px) {
+        .fragment--hudozhniki .fragment__content::after {
+            width: 174px;
+            height: 266px;
+            right: 161px;
+            margin-top: -22px;
         }
     }
 
@@ -266,6 +313,16 @@
     }
 
 
+    @media (width < 1500px) {
+        .fragment--pojety .fragment__content::after {
+            width: 135px;
+            height: 110px;
+            margin-top: 18px;
+            left: 75px;
+        }
+    }
+
+
 .fragment--muzyka {
     margin-bottom: 20px;
 }
@@ -292,6 +349,15 @@
     @media (min-resolution: 1.5dppx) {
         .fragment--muzyka .fragment__content::after {
             background-image: url("../images/fragments/fragment-muzyka-bottom@2x.jpg");
+        }
+    }
+
+    @media (width < 1500px) {
+        .fragment--muzyka .fragment__content::after {
+            width: 193px;
+            height: 202px;
+            margin-right: 110px;
+            margin-top: -33px;
         }
     }
 
@@ -376,6 +442,14 @@
         background-position: center center;
     }
 
+
+
+@media (width < 1860px) {
+    .fragment__wrap::before,
+    .fragment__wrap::after {
+        display: none !important;
+    }
+}
 
 
 @media (width < 740px) {
