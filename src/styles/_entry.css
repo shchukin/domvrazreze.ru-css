@@ -73,6 +73,7 @@
         }
             .entry__attachment {
                 scroll-snap-align: start;
+                max-width: 100%;
             }
                 .entry__slide {
                     max-width: 100% !important;
