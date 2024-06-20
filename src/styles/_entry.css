@@ -20,14 +20,12 @@
 
         .entry__attachment {
             display: block;
-            width: calc((100% - 72px) / 4);
             flex-shrink: 0;
             margin-bottom: 38px;
         }
             .entry__slide {
                 vertical-align: top;
-                width: 100%;
-                height: auto;
+                width: auto !important;
             }
 
     .entry__back {
@@ -55,7 +53,7 @@
             /*display: flex;*/
             /*align-items: flex-start;*/
             /*overflow-x: auto;*/
-            /*gap: 24px;*/
+            gap: 16px;
             scroll-snap-type: x mandatory;
         }
 
@@ -73,14 +71,14 @@
             .entry__attachment {
                 /*display: block;*/
                 scroll-snap-align: start;
-                width: 100%;
+                /*width: 100%;*/
                 /*flex-shrink: 0;*/
                 /*margin-bottom: 38px;*/
             }
                 .entry__slide {
                     /*vertical-align: top;*/
                     /*width: 100%;*/
-                    /*height: auto;*/
+                    height: 240px;
                 }
 
         .entry__back {
