@@ -68,3 +68,9 @@
 .wysiwyg .link--inverted:hover {
     text-decoration-color: currentColor;
 }
+
+
+.link--brand {
+    font-weight: bold;
+    color: #605E7D;
+}

@@ -1,9 +1,10 @@
 .button {
     display: inline-flex;
+    justify-content: center;
     vertical-align: top;
     border: none;
     padding: 12px 14px 8px;
-    min-width: 100px;
+    min-width: 80px;
     background-color: var(--action-color);
     border-radius: 0;
     font-family: var(--font-heading);
