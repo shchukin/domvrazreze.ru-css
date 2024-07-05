@@ -108,6 +108,17 @@
                         line-height: 22px;
                     }
 
+                    .footer__vk {
+                        margin-top: 16px;
+                        display: block;
+                        width: fit-content;
+                    }
+                        .footer__vk-logo {
+                            vertical-align: top;
+                            width: 125px;
+                            height: 22px;
+                        }
+
     .footer__secondary {
         display: flex;
         justify-content: space-between;
@@ -253,6 +264,17 @@
                             /*font-size: 18px;*/
                             /*line-height: 22px;*/
                         }
+
+                        .footer__vk {
+                            /*margin-top: 16px;*/
+                            /*display: block;*/
+                            /*width: fit-content;*/
+                        }
+                            .footer__vk-logo {
+                                /*vertical-align: top;*/
+                                /*width: 125px;*/
+                                /*height: 22px;*/
+                            }
 
         .footer__secondary {
             /*display: flex;*/
@@ -411,6 +433,21 @@
                             /*font-size: 18px;*/
                             /*line-height: 22px;*/
                         }
+
+                        .footer__vk {
+                            position: relative;
+                            width: 42px;
+                            height: 42px;
+                            margin-left: -5px;
+                            overflow: hidden;
+                        }
+                            .footer__vk-logo {
+                                margin-top: 5px;
+                                margin-left: 5px;
+                                width: 183px;
+                                height: auto;
+                            }
+
 
         .footer__secondary {
             display: block;
