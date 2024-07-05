@@ -45,16 +45,13 @@
                     }
 
                     .footer__partner {
-                        margin-top: 36px;
-                        margin-left: auto;
-                        margin-right: auto;
+                        margin-top: 26px;
+                        margin-left: 2px;
                         display: flex;
                         vertical-align: top;
                         width: 100px;
                     }
                         .footer__emblem {
-                            width: 100%;
-                            height: auto;
                             vertical-align: top;
                         }
 
@@ -196,8 +193,10 @@
                         }
 
                         .footer__partner {
-                            margin-left: auto;
-                            margin-right: 7px;
+                            margin-left: 0;
+                            margin-top: 16px;
+                            scale: 90%;
+                            transform-origin: 0 center;
                         }
                             .footer__emblem {
 
