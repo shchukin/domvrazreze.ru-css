@@ -340,7 +340,7 @@
         }
             .footer__primary-wrap {
                 padding-top: 23px;
-                padding-bottom: 73px;
+                padding-bottom: 33px;
             }
                 .footer__inner {
                     /*position: relative;*/
@@ -436,6 +436,7 @@
 
                         .footer__vk {
                             position: relative;
+                            margin-top: 10px;
                             width: 42px;
                             height: 42px;
                             margin-left: -5px;
