@@ -1,6 +1,5 @@
 body {
     position: relative; /* когда header становится position: absolute; на планшетах */
-    height: 100%;
     background-color: #FFF6F3;
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
